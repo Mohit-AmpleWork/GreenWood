@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {CategoriesComponent} from '../../components/category';
-import {Title} from '../../components/texts';
+import {Title} from '../../components/customText';
 
 import {Categories} from '../../components/container';
 import EventCategories from './eventCategories';

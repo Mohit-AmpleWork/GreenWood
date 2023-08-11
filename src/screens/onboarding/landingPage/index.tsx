@@ -12,13 +12,14 @@ import {
 import { GreenWoodImage } from '../../../components/image';
 import {Email, FaceBook, Google} from '../../../components/button/index';
 import SignInPage from '../signInPage';
-import { Link } from '@react-navigation/native';
+import { Link, ThemeProvider } from '@react-navigation/native';
+import colors from '../../../themes/colors';
 
 const LandingPage = ({navigation}: {navigation: any}) => {
   return (
     <ScrollView
       stickyHeaderHiddenOnScroll={true}
-      style={{backgroundColor: 'white'}}
+      style={{backgroundColor: colors.white}}
       contentContainerStyle={styles.container}>
       <StatusBar hidden={true} />
       <View>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     position: 'relative',
     padding: 20
   },
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
   button: {
     padding: 12
   },
-  txt: {color: 'black', marginTop: 224, letterSpacing: 0.88, textAlign: 'center'},
+  txt: {color: colors.black, marginTop: 224, letterSpacing: 0.88, textAlign: 'center'},
 });
 
 export default LandingPage;

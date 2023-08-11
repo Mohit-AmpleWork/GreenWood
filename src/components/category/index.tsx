@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import {Categories} from '../container';
 import {s, vs, ms} from 'react-native-size-matters';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import colors from '../../themes/colors';
 
 const Data: Array<Object> = [
   {
@@ -80,15 +82,11 @@ const CategoriesComponent = () => {
 
 const ExplorerCategories = () => {
   const renderItem = ({item}: {item: any}) => {
-    // const isSelected = selected === item.id;
-    // const bgColor = isSelected ? 'rgb(25,209,145)' : 'white';
-    // const color = isSelected ? 'white' : 'black';
-
     return (
       <View style={{rowGap: 10}}>
         <Categories
           text={item.txt}
-          color="white"
+          color={colors.white}
           bgcolor={item.BGcolor}
           src={item.img}
           onPress={() => {
@@ -120,7 +118,7 @@ const ExplorerCategories = () => {
               style={{
                 width: s(150),
                 height: s(150),
-                backgroundColor: 'orange',
+                backgroundColor: colors.orange,
                 borderRadius: 4,
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -133,7 +131,7 @@ const ExplorerCategories = () => {
               <Text
                 style={{
                   fontSize: 15,
-                  color: 'white',
+                  color: colors.white,
                   fontWeight: 'bold',
                   marginTop: 10,
                 }}>

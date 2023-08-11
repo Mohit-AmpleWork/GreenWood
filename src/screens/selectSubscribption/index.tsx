@@ -17,6 +17,7 @@ import {BottomBtn} from '../../components/button';
 import {BuisnessImg, ServiceImg} from '../../components/image';
 import {SubscribptionSelectCard} from '../../components/container';
 import {s, vs, ms, mvs} from 'react-native-size-matters';
+import colors from '../../themes/colors';
 
 const SelectSubscribption = ({
   visible,
@@ -92,7 +93,7 @@ const SelectSubscribption = ({
               showsVerticalScrollIndicator={false}
               // nestedScrollEnabled={true}
               onEndReachedThreshold={0.2}
-              contentContainerStyle={{ paddingBottom: 200 }}
+              contentContainerStyle={{ paddingBottom: 150 }}
             />
             </View>
         <BottomBtn text="Buy Now" onPress={onPress} />
@@ -104,13 +105,13 @@ const SelectSubscribption = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     width: s(375),
     height: vs(499),
     marginTop: '50%',
   },
   card: {
-    alignItems: 'center',
+    // alignItems: 'center',
     rowGap: 10,
   },
 });

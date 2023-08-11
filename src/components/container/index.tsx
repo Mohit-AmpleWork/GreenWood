@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import {s, vs, ms, mvs} from 'react-native-size-matters';
 import colors from '../../themes/colors';
-import {Labels} from '../texts';
+import {Labels} from '../customText';
 
 const CardContainer = ({
   src,
@@ -82,7 +82,7 @@ const ServicesContainer = ({
       style={{
         alignItems: 'center',
         justifyContent: 'center',
-        width: ms(165),
+        width:165,
         height: ms(102),
         borderRadius: 5,
         borderWidth: 1,
@@ -93,7 +93,7 @@ const ServicesContainer = ({
         <ImageBackground
           source={src ? {uri: src} : require('../../assets/images/muscle.webp')}
           style={{
-            width: ms(165),
+            width: 165,
             height: ms(102),
             justifyContent: 'center',
             opacity: 0.59,
@@ -457,8 +457,7 @@ const Brand = ({
         <Text style={{ fontSize: 17, color: 'rgb(74,144,226)',letterSpacing: 0.47,}}>{brand}</Text>
         <Text style={{ fontSize: 11, color: 'rgb(47,47,47)',letterSpacing: 0.27, }}>{text}</Text>
       </View>
-    </View>
-          
+    </View> 
     </View>
   );
 };

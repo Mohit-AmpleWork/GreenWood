@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {s, ms, vs, mvs} from 'react-native-size-matters';
+import colors from '../../../themes/colors';
 
 const CartContainer = () => {
   return (
@@ -60,21 +61,21 @@ const CartContainerStyle = StyleSheet.create({
     width: mvs(375),
     height: ms(100),
     padding: 13,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     borderBottomWidth: 5,
     borderRightWidth: 3,
     borderLeftWidth: 3,
     borderColor: '#eeeeee',
   },
-  subContainerOne: {Flex: 1,alignItems: 'flex-start'},
+  subContainerOne: {flex: 1,alignItems: 'flex-start'},
   subContainerTwo: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     columnGap: 10,
     margin: 25
   },
-  subContainerThree: { alignItems: 'flex-end', marginRight: 15},
+  subContainerThree: { alignItems: 'flex-end', marginRight: '8%'},
 });
 
 export default CartContainer;

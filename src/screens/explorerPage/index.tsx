@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Alert,
   ScrollView,
   StyleSheet,
   Text,
@@ -8,15 +7,12 @@ import {
   View,
 } from 'react-native';
 import {
-  CategoriesComponent,
   ExplorerCategories,
 } from '../../components/category';
-import {Labels, Title} from '../../components/texts';
-import {CardContainer, Categories} from '../../components/container';
+import {Labels, Title} from '../../components/customText';
 import DealCategories from '../dealsPage/dealsCategory';
 import EventCategories from '../eventsPage/eventCategories';
 import ShopCategory from '../shopPage/shopCategories';
-import Stores from '../storePage';
 import StoreCategory from '../storePage/storeCategory';
 
 const Explorer = ({navigation}: {navigation: any}) => {

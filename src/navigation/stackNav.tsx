@@ -1,4 +1,3 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Explorer from '../screens/explorerPage';
@@ -32,7 +31,7 @@ const StackNav = () => {
       initialRouteName={'LandingPage'}
       screenOptions={{headerShown: false}}>
       <Stack.Group>
-      <Stack.Screen name="landingPage" component={LandingPage} />
+        <Stack.Screen name="landingPage" component={LandingPage} />
         <Stack.Screen name="SignInPage" component={SignInPage} />
         <Stack.Screen name="SignUpPage" component={SignUp} />
       </Stack.Group>
@@ -40,7 +39,10 @@ const StackNav = () => {
         <Stack.Screen name="BottomTab" component={BottomTab} />
         <Stack.Screen name="Explorer" component={Explorer} />
         <Stack.Screen name="BusinessDetails" component={BusinessDetails} />
-        <Stack.Screen name="SubscribptionDetails" component={SubscribtionDetails} />
+        <Stack.Screen
+          name="SubscribptionDetails"
+          component={SubscribtionDetails}
+        />
         <Stack.Screen
           options={{title: 'MuscleTraining', headerShown: true}}
           name="ServiceDetails"

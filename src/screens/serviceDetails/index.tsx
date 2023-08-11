@@ -11,6 +11,7 @@ import {
 import {Header} from 'react-native/Libraries/NewAppScreen';
 import {BottomBtn} from '../../components/button';
 import {ServiceImg} from '../../components/image';
+import colors from '../../themes/colors';
 
 const ServiceDetails = ({navigation}: {navigation: any}) => {
   const data: Array<Object> = [
@@ -48,7 +49,6 @@ const ServiceDetails = ({navigation}: {navigation: any}) => {
           </ScrollView>
           <View>
             <Text style={ServiceStyle.txt1}>Muscle Training</Text>
-
             <View style={ServiceStyle.subContainer}>
               <Text style={ServiceStyle.txt3}>About Service</Text>
               <Text style={ServiceStyle.txt4}>
@@ -87,7 +87,7 @@ const ServiceDetails = ({navigation}: {navigation: any}) => {
 const ServiceStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     rowGap: 10,
     flexDirection: 'column',
   },
@@ -97,7 +97,7 @@ const ServiceStyle = StyleSheet.create({
   },
   subSubContainer: {},
   txt1: {
-    color: 'black',
+    color: colors.black,
     fontSize: 19,
     letterSpacing: 0.37,
     marginTop: 10,
@@ -112,7 +112,7 @@ const ServiceStyle = StyleSheet.create({
   txt3: {
     color: 'black',
     fontWeight: '600',
-    fontSize: 13,
+    fontSize: 12,
     letterSpacing: 0.31,
   },
   txt4: {
@@ -120,13 +120,6 @@ const ServiceStyle = StyleSheet.create({
     fontWeight: '300',
     fontSize: 11,
     letterSpacing: 0.26,
-  },
-  txt5: {
-    color: 'black',
-    fontWeight: '600',
-    fontSize: 12,
-    letterSpacing: 0.31,
-    marginTop: 20,
   },
 });
 

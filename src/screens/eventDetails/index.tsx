@@ -4,7 +4,7 @@ import {Alert, ScrollView, StyleSheet, View,TouchableOpacity,Image} from 'react-
 import {s,ms , vs } from 'react-native-size-matters';
 import {BottomBtn} from '../../components/button';
 import {BuisnessImg} from '../../components/image';
-import {Labels} from '../../components/texts';
+import {Labels} from '../../components/customText';
 
 const EventDetails = ({navigation}: {navigation: any}) => {
   const pop = () => {

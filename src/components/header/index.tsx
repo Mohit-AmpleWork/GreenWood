@@ -1,7 +1,7 @@
 import React from 'react'
 import {View,TouchableOpacity,Image} from 'react-native';
 import {s, ms, vs, mvs} from 'react-native-size-matters'
-import { Labels, Title } from '../texts';
+import { Labels, Title } from '../customText';
 
 const Header = ({onPress, title}: {onPress: any, title: string}) => {
   return (

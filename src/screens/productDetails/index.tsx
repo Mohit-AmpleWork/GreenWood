@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {BottomBtn} from '../../components/button';
 import {BuisnessImg, ServiceImg} from '../../components/image';
-import {Labels} from '../../components/texts';
+import {Labels} from '../../components/customText';
 import { Brand } from '../../components/container';
 import BusinessDetails from '../buisnessDetailsPage';
 import {s, vs, ms, mvs} from 'react-native-size-matters'

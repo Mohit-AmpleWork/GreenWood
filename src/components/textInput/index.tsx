@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, TextInput, KeyboardTypeOptions} from 'react-native';
 import { s , ms} from 'react-native-size-matters';
+import colors from '../../themes/colors';
 
 const EmailInput = ({
   keyboardType,
@@ -11,16 +12,16 @@ const EmailInput = ({
 }) => {
   return (
     <View>
-      <Text style={{color: '#626262', marginTop: 26}}>{text}</Text>
+      <Text style={{color: colors.labelColor, marginTop: 26}}>{text}</Text>
       <TextInput
         style={{
-          borderBottomColor: '#d8d8d8',
+          borderBottomColor: colors.inputBorder,
           borderWidth: 1,
           width: 300,
-          borderTopColor: 'white',
-          borderLeftColor: 'white',
-          borderRightColor: 'white',
-          color: 'black',
+          borderTopColor: colors.white,
+          borderLeftColor: colors.white,
+          borderRightColor: colors.white,
+          color: colors.black,
           marginTop: 10,
           padding: 4
         }}
@@ -40,13 +41,13 @@ const CheckoutInput = ({
 }) => {
   return (
     <View>
-      <Text style={{color: '#626262', marginTop: 26}}>{text}</Text>
+      <Text style={{color: colors.labelColor, marginTop: 26}}>{text}</Text>
       <TextInput
         style={{
           width: width,
           height: 50,
-          backgroundColor: 'white',
-          color: 'black',
+          backgroundColor: colors.white,
+          color: colors.black,
           marginTop: 10,
           padding: 4
         }}

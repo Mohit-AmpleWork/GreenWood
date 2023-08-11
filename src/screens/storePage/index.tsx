@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {CategoriesComponent} from '../../components/category';
 
-import { Title } from '../../components/texts';
+import { Title } from '../../components/customText';
 import {Categories, StoreContainer} from '../../components/container';
 import StoreCategory from './storeCategory';
 

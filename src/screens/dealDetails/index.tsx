@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, View, Text, StyleSheet,TouchableOpacity,Image} from 'react-native';
 import {BuisnessImg} from '../../components/image';
-import {Labels} from '../../components/texts';
+import {Labels} from '../../components/customText';
 import {BusinessReview} from '../../components/container';
 
 const DealsDetails = ({navigation}: {navigation: any}) => {
@@ -100,7 +100,7 @@ const DealsStyle = StyleSheet.create({
     justifyContent: 'center',
     marginHorizontal: 14.5,
     marginVertical: 14.5,
-    rowGap: 20
+    rowGap: 20,
   },
   txt: {
     color: 'rgb(84,184,0)',

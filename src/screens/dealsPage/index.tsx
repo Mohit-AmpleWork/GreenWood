@@ -7,7 +7,7 @@ import {
   Image,
 } from 'react-native';
 import {CategoriesComponent} from '../../components/category';
-import {Title} from '../../components/texts';
+import {Title} from '../../components/customText';
 import DealCategories from './dealsCategory';
 import {s, vs, ms, mvs} from 'react-native-size-matters';
 
@@ -48,7 +48,7 @@ const dealStyle = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(246,246,246)',
     rowGap: 14,
-    marginTop: 29,
+    // marginTop: 29,
   },
   subContainerOne: {
     flexDirection: 'row',

@@ -28,22 +28,10 @@ const Labels = ({text, fontsize, letterspacing, Color}: {text: string, fontsize:
   );
 };
 
-// type props = {
+const CustomText = {
+  Primary: {
 
-// }
-
-// const CustomText = (props) => {
-//   return (
-//     <Text style={[txtStyles.defaultStyle, props.style]} >
-//       {props.text}
-//     </Text>
-//   )
-// }
-
-// const txtStyles = StyleSheet.create({
-//   defaultStyle: {
-//     color: 'black'
-//   },
-// })
-
-export {Title,Labels };
+  }
+}
+ 
+export {Title, Labels };

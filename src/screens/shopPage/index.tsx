@@ -1,6 +1,6 @@
 import React from 'react'
 import {View,Text ,ScrollView, Image,TouchableOpacity, StyleSheet} from 'react-native'
-import { Title } from '../../components/texts'
+import { Title } from '../../components/customText'
 import { ShopContainer } from '../../components/container'
 import ShopCategory from './shopCategories'
 

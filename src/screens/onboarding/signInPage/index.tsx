@@ -15,6 +15,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {GoBack, SignedBtn} from '../../../components/button/index';
 import {GreenWoodImage} from '../../../components/image/index';
 import {EmailInput} from '../../../components/textInput/index';
+import colors from '../../../themes/colors';
 
 const SignInPage = ({navigation}: {navigation: any}) => {
   return (
@@ -25,31 +26,30 @@ const SignInPage = ({navigation}: {navigation: any}) => {
       <ScrollView
         stickyHeaderHiddenOnScroll={true}
         style={{backgroundColor: 'white', paddingBottom: 50}}
-        contentContainerStyle={{padding: 20}}
-        >
+        contentContainerStyle={{padding: 20}}>
         <View style={styles.container}>
           <StatusBar hidden={true} />
           <KeyboardAwareScrollView>
             <GreenWoodImage />
             <View style={styles.subContainer}>
-            <EmailInput text="E-MAIL ADDRESS" keyboardType="email-address" />
-            <EmailInput text="PASSWORD" keyboardType="default" />
-            <View
-              style={{
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-              }}>
-              <SignedBtn
-                text="Sign In"
-                onPress={() => {
-                  navigation.push('BottomTab');
-                }}
-              />
-              <Text style={{color: 'red', marginTop: 26}}>
-                Forgot Password?
-              </Text>
-            </View>
+              <EmailInput text="E-MAIL ADDRESS" keyboardType="email-address" />
+              <EmailInput text="PASSWORD" keyboardType="default" />
+              <View
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                }}>
+                <SignedBtn
+                  text="Sign In"
+                  onPress={() => {
+                    navigation.push('BottomTab');
+                  }}
+                />
+                <Text style={{color: 'red', marginTop: 26}}>
+                  Forgot Password?
+                </Text>
+              </View>
             </View>
             <View>
               <GoBack
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     rowGap: 10,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     marginTop: 30,
     position: 'relative',
   },
