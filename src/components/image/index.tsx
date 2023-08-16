@@ -11,11 +11,13 @@ import {s, vs, ms, mvs} from 'react-native-size-matters';
 
 const GreenWoodImage = () => {
   return (
+    <View style={{ alignSelf: 'center' }}>
     <Image
       source={require('../../assets/images/group22.png')}
-      style={{width: s(257), height: vs(213), margin: 15}}
+      style={{width: s(257), height: vs(213)}}
       resizeMode="stretch"
     />
+    </View>
   );
 };
 

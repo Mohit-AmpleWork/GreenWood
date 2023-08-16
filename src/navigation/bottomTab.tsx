@@ -8,6 +8,7 @@ import {Image} from 'react-native';
 import colors from '../themes/colors';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/core';
 import {mvs, vs} from 'react-native-size-matters';
+import More from '../screens/more';
 
 const Tab = createBottomTabNavigator();
 
@@ -69,6 +70,18 @@ const BottomTab = () => {
           tabBarIcon: () => (
             <Image
               source={require('../assets/images/ProductsIcon/products.png')}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="More"
+        component={More}
+        options={{
+          tabBarLabel: 'More',
+          tabBarIcon: () => (
+            <Image
+              source={require('../assets/images/MoreIcon/more.png')}
             />
           ),
         }}

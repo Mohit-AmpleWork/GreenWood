@@ -21,6 +21,9 @@ import SignInPage from '../screens/onboarding/signInPage';
 import SignUp from '../screens/onboarding/signUpPage';
 import BottomTab from './bottomTab';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import UserProfile from '../screens/more/userProfie';
+import More from '../screens/more';
+import Inbox from '../screens/more/inbox';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -57,6 +60,8 @@ const StackNav = () => {
         <Stack.Screen name="ProductDetails" component={ProductDetails} />
         <Stack.Screen name="cart" component={Cart} />
         <Stack.Screen name="Checkout" component={Checkout} />
+        <Stack.Screen name='UserProfile' component={UserProfile} />
+        <Stack.Screen name='Inbox' component={Inbox} />
       </Stack.Group>
     </Stack.Navigator>
   );

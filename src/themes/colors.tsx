@@ -4,7 +4,7 @@ const colors = {
   clear: 'rgba(0,0,0,0)',
   transparent: 'rgba(0,0,0,0)',
   black: '#000',
-  silver: '#F7F7F7',
+  silver:   'rgb(237,237,237)',
   steel: '#CCCCCC',
   error: 'rgba(200, 0, 0, 0.8)',
   labelColor: '#626262',
