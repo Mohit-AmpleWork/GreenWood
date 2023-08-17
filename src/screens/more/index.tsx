@@ -4,19 +4,18 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import MoreCard from '../../components/moreCard';
 import MoreList from './moreList';
 
-const More = () => {
+const More = ({navigation}: {navigation: any}) => {
   return (
     <ScrollView>
       <View style={MoreStyle.container}>
         <MoreCard />
         <MoreList />
-        <TouchableOpacity style={MoreStyle.logout}>
+        <TouchableOpacity style={MoreStyle.logout} onPress={() => {navigation.navigate('SignInPage')}}>
         <Image
           source={require('../../assets/images/LogOut/logout.png')}
           width={20}
           height={21}
-          tintColor={Colors.white}
-          
+          tintColor={Colors.white}   
         />
         </TouchableOpacity>
       </View>

@@ -1,30 +1,24 @@
 import React from 'react';
 import {
-  Alert,
   FlatList,
-  Image,
-  Modal,
-  ScrollView,
   StatusBar,
   StyleSheet,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {BottomBtn} from '../../components/button';
-import {BuisnessImg, ServiceImg} from '../../components/image';
 import {SubscribptionSelectCard} from '../../components/container';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import {s, vs,ms} from 'react-native-size-matters';
 import colors from '../../themes/colors';
+import Modal from 'react-native-modal';
 
 const SelectSubscribption = ({
   visible,
   onPress,
+  onSwipe,
 }: {
   visible: any;
   onPress: any;
+  onSwipe: any;
 }) => {
   const [selected, setSelected] = React.useState(null);
 
@@ -80,7 +74,8 @@ const SelectSubscribption = ({
   };
 
   return (
-    <Modal visible={visible} transparent={true}>
+    <View >
+    <Modal isVisible={visible} onSwipeComplete={onSwipe} swipeDirection='down'>
       <StatusBar hidden={true} />
       <View style={styles.container}>
         <View>
@@ -91,7 +86,6 @@ const SelectSubscribption = ({
               data={Data}
               renderItem={RenderItem}
               showsVerticalScrollIndicator={false}
-              // nestedScrollEnabled={true}
               onEndReachedThreshold={0.2}
               contentContainerStyle={{ paddingBottom: 150 }}
             />
@@ -99,16 +93,17 @@ const SelectSubscribption = ({
         <BottomBtn text="Buy Now" onPress={onPress} />
       </View>
     </Modal>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
-    width: s(375),
-    height: vs(499),
-    marginTop: '50%',
+    backgroundColor: 'white',
+    width: '100%',
+    height: ms(316),
+    marginTop: '75%',
   },
   card: {
     // alignItems: 'center',

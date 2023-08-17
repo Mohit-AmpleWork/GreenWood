@@ -7,6 +7,7 @@ import {
   Platform,
   TouchableWithoutFeedback,
   Keyboard,
+  Alert,
 } from 'react-native';
 import {ScrollView} from 'react-native';
 import {BottomBtn} from '../../../components/button';
@@ -69,7 +70,9 @@ const Checkout = ({navigation}: {navigation: any}) => {
           </KeyboardAwareScrollView>
         </ScrollView>
         <TouchableWithoutFeedback onPress={() => {setIsModal(false)}}>
-        <PayProcess visible={isModal} onPress={() => {setIsModal(false)}}/>
+          <View>
+        <PayProcess visible={isModal} onPress={() => {Alert.alert('Yess!')}} onSwipe={() => {setIsModal(false)}} />
+        </View>
         </TouchableWithoutFeedback> 
         <BottomBtn text="Pay Now" onPress={() => { setIsModal(true)}}/>
         </View>

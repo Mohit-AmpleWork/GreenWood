@@ -1,13 +1,9 @@
-import {useMemo} from 'react';
+import React from 'react';
 import {
   Pressable,
-  View,
   Text,
   Image,
-  Alert,
   TouchableOpacity,
-  StyleSheet,
-  Button,
 } from 'react-native';
 import {s, vs, ms, mvs} from 'react-native-size-matters'
 import colors from '../../themes/colors';
@@ -142,7 +138,7 @@ const BottomBtn = ({onPress, text}: {onPress: any; text: string}) => {
         marginTop: 'auto',
       }}
       onPress={onPress}>
-      <Text style={{color: 'white'}}>{text}</Text>
+      <Text style={{color: 'white', fontSize: 19, fontWeight: '500'}}>{text}</Text>
     </Pressable>
   );
 };

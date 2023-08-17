@@ -258,10 +258,10 @@ const SubscribptionSelectCard = ({
   onPress: any;
 }) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress}>
+    <TouchableWithoutFeedback onPress={onPress} >
       <View
         style={{
-          width: 345,
+          width: ms(325),
           height: mvs(73),
           borderStyle: 'dashed',
           borderColor: `${Color}`,
@@ -271,8 +271,8 @@ const SubscribptionSelectCard = ({
           justifyContent: 'flex-end',
           alignItems: 'center',
           columnGap: 20,
-          padding: 15,
-          margin: 10,
+          padding: ms(15),
+          margin: 4
         }}>
         <Text
           style={{
@@ -289,7 +289,6 @@ const SubscribptionSelectCard = ({
             Yoga, Cardio, Muscle Gain
           </Text>
         </View>
-
         <View
           style={{
             borderRadius: 100,

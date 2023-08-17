@@ -14,8 +14,8 @@ const GreenWoodImage = () => {
     <View style={{ alignSelf: 'center' }}>
     <Image
       source={require('../../assets/images/group22.png')}
-      style={{width: s(257), height: vs(213)}}
-      resizeMode="stretch"
+      style={{width: mvs(257), height: mvs(213)}}
+      resizeMode='contain'
     />
     </View>
   );

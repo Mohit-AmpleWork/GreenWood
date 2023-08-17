@@ -18,7 +18,6 @@ import colors from '../../../themes/colors';
 const LandingPage = ({navigation}: {navigation: any}) => {
   return (
     <ScrollView
-      stickyHeaderHiddenOnScroll={true}
       style={{backgroundColor: colors.white}}
       contentContainerStyle={styles.container}>
       <StatusBar hidden={true} />
@@ -47,7 +46,6 @@ const LandingPage = ({navigation}: {navigation: any}) => {
             <Text style={{color: '#17c884', letterSpacing: 0.88,}}>SignUp</Text>
             {/* <Link to='/' style={{color: '#17c884', letterSpacing: 0.88,} >SignUp</Link> */}
           </TouchableOpacity>
-          
         </Text>
       </View>
     </ScrollView>
