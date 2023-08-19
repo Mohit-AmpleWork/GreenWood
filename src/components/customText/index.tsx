@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text} from 'react-native';
+import { vs } from 'react-native-size-matters/extend';
 import { Double, Float } from 'react-native/Libraries/Types/CodegenTypes';
 
 const Title = ({text}: {text: string}) => {
@@ -8,7 +9,7 @@ const Title = ({text}: {text: string}) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 30,
+    fontSize: vs(30),
     letterSpacing: 0.83,
     color: '#797979',
     marginLeft: 5,

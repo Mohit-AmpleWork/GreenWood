@@ -6,14 +6,13 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
-import {CategoriesComponent} from '../../components/category';
-import {Title} from '../../components/customText';
-import DealCategories from './dealsCategory';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import { Title } from '../../../../components/customText';
+import DealCategories from '../../../dealsPage/dealsCategory';
 
-const Deals = ({navigation}: {navigation: any}) => {
+
+const FavoriteDeals = ({navigation}: {navigation: any}) => {
   const pop = () => {
-    navigation.navigate('Explorer')
+    navigation.goBack();
   };
   return (
     <View style={dealStyle.container}>
@@ -21,13 +20,10 @@ const Deals = ({navigation}: {navigation: any}) => {
         <TouchableOpacity style={{width: 28, height: 18}} onPress={pop}>
           <Image
             style={{tintColor: '#797979', marginTop: 10, marginLeft: 4}}
-            source={require('../../assets/images/path/path.png')}
+            source={require('../../../../assets/images/path/path.png')}
           />
         </TouchableOpacity>
         <Title text="Nearby Deals " />
-      </View>
-      <View>
-        <CategoriesComponent />
       </View>
       <View style={dealStyle.subContainerTwo}>
         <DealCategories
@@ -37,7 +33,7 @@ const Deals = ({navigation}: {navigation: any}) => {
             navigation.navigate('DealsDetails');
           }}
           style={{paddingBottom: 200}}
-          favorite={false}
+          favorite={true}
         />
       </View>
     </View>
@@ -64,4 +60,4 @@ const dealStyle = StyleSheet.create({
   },
 });
 
-export default Deals;
+export default FavoriteDeals;

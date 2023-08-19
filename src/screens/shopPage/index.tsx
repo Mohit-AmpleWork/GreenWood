@@ -1,32 +1,38 @@
-import React from 'react'
-import {View,Text ,ScrollView, Image,TouchableOpacity, StyleSheet} from 'react-native'
-import { Title } from '../../components/customText'
-import { ShopContainer } from '../../components/container'
-import ShopCategory from './shopCategories'
+import React from 'react';
+import {View, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {Title} from '../../components/customText';
+import ShopCategory from './shopCategories';
 
 const Shop = ({navigation}: {navigation: any}) => {
   return (
     <View style={ShopStyle.container}>
-    <View style={ShopStyle.subContainerOne}>
-      <TouchableOpacity
-        style={{width: 28, height: 18}}
-        onPress={() => {
-          navigation.goBack();
-        }}>
-        <Image
-          style={{tintColor: '#797979', marginTop: 10, marginLeft: 4}}
-          source={require('../../assets/images/path/path.png')}
+      <View style={ShopStyle.subContainerOne}>
+        <TouchableOpacity
+          style={{width: 28, height: 18}}
+          onPress={() => {
+            navigation.navigate('Explorer');
+          }}>
+          <Image
+            style={{tintColor: '#797979', marginTop: 10, marginLeft: 4}}
+            source={require('../../assets/images/path/path.png')}
+          />
+        </TouchableOpacity>
+        <Title text="Shop Products" />
+      </View>
+      <View style={ShopStyle.subContainerTwo}>
+        <ShopCategory
+          onPress={() => {
+            navigation.push('ProductDetails');
+          }}
+          horizontal={false}
+          pagingEnabled={false}
+          style={{paddingBottom: 200}}
+          favorite={false}
         />
-      </TouchableOpacity>
-      <Title text="Shop Products"  />
+      </View>
     </View>
-    <View style={ShopStyle.subContainerTwo}>
-      <ShopCategory onPress={() => {navigation.push('ProductDetails')}} horizontal={false} pagingEnabled={false} style={{ paddingBottom: 200 }} />
-    </View>
-  </View>
-  
-  )
-}
+  );
+};
 
 const ShopStyle = StyleSheet.create({
   container: {
@@ -46,5 +52,4 @@ const ShopStyle = StyleSheet.create({
   },
 });
 
-
-export default Shop
+export default Shop;

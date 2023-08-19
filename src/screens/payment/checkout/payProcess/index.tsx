@@ -36,14 +36,11 @@ const PayProcess = ({
             </View>
             <View style={{ alignItems: 'center' }}>
               <TextInput placeholder='xxxx-xxxx-xxxx-xxxx' placeholderTextColor='rgb(51,51,51)' style={styles.input} >
-
               </TextInput>
               <View style={{ flexDirection: 'row' }} >
-              <TextInput placeholder='MM-YY' placeholderTextColor='rgb(51,51,51)' style={styles.secInput} >
-
+              <TextInput placeholder='MM-YY' placeholderTextColor='rgb(51,51,51)' style={styles.secInputOne} >
               </TextInput>
-              <TextInput placeholder='CCV' placeholderTextColor='rgb(51,51,51)' style={styles.secInput} >
-
+              <TextInput placeholder='CCV' placeholderTextColor='rgb(51,51,51)' style={styles.secInputTwo} >
               </TextInput>
               </View>
               <Image
@@ -51,8 +48,9 @@ const PayProcess = ({
                   uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/1200px-Stripe_Logo%2C_revised_2016.svg.png',
                 }}
                 width={94}
-                height={94}
+                height={75}
                 resizeMode="stretch"
+                style={{ opacity: 0.5 }}
               />
             </View>
             <BottomBtn text="Proceed" onPress={onPress} />
@@ -75,18 +73,25 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 50,
-    width: 345,
+    width: ms(300),
     padding: 10,
     margin: 4,
     marginBottom: 0,
-    borderColor: 'rgb(205,205,205)' ,
+    borderColor: 'rgba(0,0,0,0.54)' ,
     backgroundColor: 'rgb(246,246,246)' 
   },
-  secInput: {
+  secInputOne: {
     height: 50,
-    width: '50%',
+    width: ms(170),
+    paddingLeft: 10,
+    borderColor: 'rgba(0,0,0,0.54)',
+    backgroundColor: 'rgb(246,246,246)' 
+  },
+  secInputTwo: {
+    height: 50,
+    width: ms(130),
     padding: 10,
-    borderColor: 'rgb(205,205,205)' ,
+    borderColor: 'rgba(0,0,0,0.54)' ,
     backgroundColor: 'rgb(246,246,246)' 
   }
 });

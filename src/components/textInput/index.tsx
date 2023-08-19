@@ -1,14 +1,19 @@
 import React from 'react';
-import {Text, View, TextInput, KeyboardTypeOptions} from 'react-native';
-import { s , ms} from 'react-native-size-matters';
+import {Text, View, TextInput, KeyboardTypeOptions, InputModeOptions} from 'react-native';
 import colors from '../../themes/colors';
 
-const EmailInput = ({
+const FormInput = ({
   keyboardType,
   text,
+  value,
+  onChangeText,
+  inputMode,
 }: {
   keyboardType: KeyboardTypeOptions;
   text: string;
+  value: string;
+  onChangeText: any;
+  inputMode: InputModeOptions;
 }) => {
   return (
     <View>
@@ -25,7 +30,11 @@ const EmailInput = ({
           marginTop: 10,
           padding: 4
         }}
-        accessible={false} keyboardType={keyboardType}></TextInput>
+        keyboardType={keyboardType}
+        value={value}
+        onChange={onChangeText} 
+        inputMode={inputMode}
+        />
     </View>
   );
 };
@@ -57,4 +66,4 @@ const CheckoutInput = ({
 };
 
 
-export {EmailInput, CheckoutInput};
+export {FormInput, CheckoutInput};

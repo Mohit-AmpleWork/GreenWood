@@ -10,14 +10,37 @@ import {
   Keyboard,
   StyleSheet,
   ScrollView,
+  Alert,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {MMKV} from 'react-native-mmkv';
 import {GoBack, SignedBtn} from '../../../components/button/index';
 import {GreenWoodImage} from '../../../components/image/index';
-import {EmailInput} from '../../../components/textInput/index';
+import {FormInput} from '../../../components/textInput/index';
 import colors from '../../../themes/colors';
 
+const mmkv = new MMKV();
+
 const SignInPage = ({navigation}: {navigation: any}) => {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  const handleSignIn = () => {
+    const userData = {
+      email: mmkv.getString(email),
+      password: mmkv.getString(password)
+    }
+    if (!userData || userData.email !== email || userData.password !== password) {
+      Alert.alert('Error', 'Invalid email or password');
+      return;
+    }else{
+      
+      Alert.alert('Success', 'Sign in successful!');
+    }
+    
+    
+  };
+
   return (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -32,20 +55,32 @@ const SignInPage = ({navigation}: {navigation: any}) => {
           <KeyboardAwareScrollView>
             <GreenWoodImage />
             <View style={styles.subContainer}>
-              <EmailInput text="E-MAIL ADDRESS" keyboardType="email-address" />
-              <EmailInput text="PASSWORD" keyboardType="default" />
+              <FormInput
+                text="E-MAIL ADDRESS"
+                keyboardType="email-address"
+                inputMode='email'
+                onChangeText={({text}: {text: string}) =>
+                  setEmail(text)
+                }
+                value={email}
+              />
+              <FormInput
+                text="PASSWORD"
+                keyboardType="default"
+                inputMode='text'
+                onChangeText={({text}: {text: string}) =>
+                  setPassword(text)
+                }
+                value={password}
+              />
               <View
                 style={{
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   flexDirection: 'row',
                 }}>
-                <SignedBtn
-                  text="Sign In"
-                  onPress={() => {
-                    navigation.push('BottomTab');
-                  }}
-                />
+                <SignedBtn text="Sign In" onPress={() => {navigation.navigate('BottomTab')
+}} />
                 <Text style={{color: 'red', marginTop: 26}}>
                   Forgot Password?
                 </Text>

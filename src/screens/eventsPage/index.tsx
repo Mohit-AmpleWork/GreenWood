@@ -8,13 +8,11 @@ import {
 } from 'react-native';
 import {CategoriesComponent} from '../../components/category';
 import {Title} from '../../components/customText';
-
-import {Categories} from '../../components/container';
 import EventCategories from './eventCategories';
 
 const Events = ({navigation}: {navigation: any}) => {
   const pop = () => {
-    navigation.goBack();
+    navigation.navigate('Explorer')
   };
   return (
     <View style={EventStyle.container}>
@@ -40,6 +38,7 @@ const Events = ({navigation}: {navigation: any}) => {
             navigation.navigate('EventDetails');
           }}
           style={{paddingBottom: 200}}
+          favorite={false}
         />
       </View>
     </View>

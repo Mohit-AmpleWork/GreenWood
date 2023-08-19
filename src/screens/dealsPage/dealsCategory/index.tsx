@@ -1,17 +1,19 @@
 import React from 'react';
-import {FlatList, ScrollView, View} from 'react-native';
-import {CardContainer, EventContainer} from '../../../components/container';
+import {FlatList, Image, View} from 'react-native';
+import {CardContainer} from '../../../components/container';
 
 const DealCategories = ({
   horizontal,
   pageEnable,
   onPress,
   style,
+  favorite,
 }: {
   horizontal: boolean;
   pageEnable: boolean;
   onPress: any;
-  style: object
+  style: object;
+  favorite: boolean;
 }) => {
   const data: Array<Object> = [
     {
@@ -54,6 +56,9 @@ const DealCategories = ({
           text={item.txt}
           onPress={onPress}
         />
+        {favorite
+        ? <Image source={require('../../../assets/images/shape2/shape.png')} style={{ position: 'absolute', alignSelf: 'flex-end', margin: 5 }} /> 
+        : null }
       </View>
     );
   };

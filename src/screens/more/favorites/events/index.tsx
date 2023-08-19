@@ -1,55 +1,52 @@
 import React from 'react';
 import {
-  ScrollView,
-  View,
-  TouchableOpacity,
-  StyleSheet,
   Image,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import {CategoriesComponent} from '../../components/category';
-import {Title} from '../../components/customText';
-import DealCategories from './dealsCategory';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import { Title } from '../../../../components/customText';
+import EventCategories from '../../../eventsPage/eventCategories';
 
-const Deals = ({navigation}: {navigation: any}) => {
+
+const FavoriteEvents = ({navigation}: {navigation: any}) => {
   const pop = () => {
-    navigation.navigate('Explorer')
+    navigation.goBack();
   };
   return (
-    <View style={dealStyle.container}>
-      <View style={dealStyle.subContainerOne}>
+    <View style={EventStyle.container}>
+      <View style={EventStyle.subContainerOne}>
         <TouchableOpacity style={{width: 28, height: 18}} onPress={pop}>
           <Image
             style={{tintColor: '#797979', marginTop: 10, marginLeft: 4}}
-            source={require('../../assets/images/path/path.png')}
+            source={require('../../../../assets/images/path/path.png')}
           />
         </TouchableOpacity>
-        <Title text="Nearby Deals " />
+        <View>
+          <Title text="Events" />
+        </View>
       </View>
-      <View>
-        <CategoriesComponent />
-      </View>
-      <View style={dealStyle.subContainerTwo}>
-        <DealCategories
+      <View style={EventStyle.subContainerTwo}>
+        <EventCategories
           horizontal={false}
           pageEnable={false}
           onPress={() => {
-            navigation.navigate('DealsDetails');
+            navigation.navigate('EventDetails');
           }}
           style={{paddingBottom: 200}}
-          favorite={false}
+          favorite={true}
         />
       </View>
     </View>
   );
 };
 
-const dealStyle = StyleSheet.create({
+const EventStyle = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'rgba(246,246,246)',
     rowGap: 14,
-    // marginTop: 29,
   },
   subContainerOne: {
     flexDirection: 'row',
@@ -64,4 +61,4 @@ const dealStyle = StyleSheet.create({
   },
 });
 
-export default Deals;
+export default FavoriteEvents;

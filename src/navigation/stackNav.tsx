@@ -1,32 +1,30 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import Explorer from '../screens/explorerPage';
 import ServiceDetails from '../screens/serviceDetails';
-import BusinessDetails from '../screens/buisnessDetailsPage';
+import BusinessDetails from '../screens/businessDetailsPage';
 import SubscribtionDetails from '../screens/subScribptionDetails';
 import Stores from '../screens/storePage';
-import SelectSubscribption from '../screens/selectSubscribption';
 import Events from '../screens/eventsPage';
 import EventDetails from '../screens/eventDetails';
-import DealCategories from '../screens/dealsPage/dealsCategory';
 import Deals from '../screens/dealsPage';
 import DealsDetails from '../screens/dealDetails';
 import Shop from '../screens/shopPage';
 import ProductDetails from '../screens/productDetails';
 import Cart from '../screens/payment/cart';
 import Checkout from '../screens/payment/checkout';
-import PayProcess from '../screens/payment/checkout/payProcess';
 import LandingPage from '../screens/onboarding/landingPage';
 import SignInPage from '../screens/onboarding/signInPage';
 import SignUp from '../screens/onboarding/signUpPage';
 import BottomTab from './bottomTab';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import UserProfile from '../screens/more/userProfie';
-import More from '../screens/more';
 import Inbox from '../screens/more/inbox';
+import FavProducts from '../screens/more/favorites/shop';
+import FavBusiness from '../screens/more/favorites/business';
+import FavoriteDeals from '../screens/more/favorites/deals';
+import FavoriteEvents from '../screens/more/favorites/events';
+import Order from '../screens/more/orders';
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
 
 const StackNav = () => {
   return (
@@ -40,7 +38,6 @@ const StackNav = () => {
       </Stack.Group>
       <Stack.Group>
         <Stack.Screen name="BottomTab" component={BottomTab} />
-        <Stack.Screen name="Explorer" component={Explorer} />
         <Stack.Screen name="BusinessDetails" component={BusinessDetails} />
         <Stack.Screen
           name="SubscribptionDetails"
@@ -60,8 +57,13 @@ const StackNav = () => {
         <Stack.Screen name="ProductDetails" component={ProductDetails} />
         <Stack.Screen name="cart" component={Cart} />
         <Stack.Screen name="Checkout" component={Checkout} />
-        <Stack.Screen name='UserProfile' component={UserProfile} />
-        <Stack.Screen name='Inbox' component={Inbox} />
+        <Stack.Screen name="UserProfile" component={UserProfile} />
+        <Stack.Screen name="Inbox" component={Inbox} />
+        <Stack.Screen name="FavoriteProducts" component={FavProducts} />
+        <Stack.Screen name="FavoriteBusiness" component={FavBusiness} />
+        <Stack.Screen name="FavoriteDeals" component={FavoriteDeals} />
+        <Stack.Screen name="FavoriteEvents" component={FavoriteEvents} />
+        <Stack.Screen name="orders" component={Order} />
       </Stack.Group>
     </Stack.Navigator>
   );

@@ -12,7 +12,7 @@ import {BottomBtn} from '../../components/button';
 import {BuisnessImg, ServiceImg} from '../../components/image';
 import {Labels} from '../../components/customText';
 import { Brand } from '../../components/container';
-import BusinessDetails from '../buisnessDetailsPage';
+import BusinessDetails from '../businessDetailsPage';
 import {s, vs, ms, mvs} from 'react-native-size-matters'
 
 const ProductDetails = ({navigation}: {navigation: any}) => {

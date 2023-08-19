@@ -1,8 +1,8 @@
 import React from 'react'
-import { FlatList, StyleSheet, View } from 'react-native'
+import { FlatList, Image, StyleSheet, View } from 'react-native'
 import { ShopContainer } from '../../../components/container';
 
-const ShopCategory = ({onPress, horizontal,pagingEnabled,style}: {onPress: any, horizontal: boolean,pagingEnabled: boolean; style: object}) => {
+const ShopCategory = ({onPress, horizontal,pagingEnabled,style, favorite}: {onPress: any, horizontal: boolean,pagingEnabled: boolean; style: object; favorite: boolean}) => {
 
   const data: Array<Object> = [
     {
@@ -75,6 +75,9 @@ const ShopCategory = ({onPress, horizontal,pagingEnabled,style}: {onPress: any, 
           price={item.price}
           brand={item.brand}
         />
+        {favorite
+        ? <Image source={require('../../../assets/images/shape2/shape.png')} style={{ position: 'absolute', margin: 10 }} /> 
+        : null }
       </>
     );
   };

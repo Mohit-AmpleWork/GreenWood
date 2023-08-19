@@ -1,4 +1,3 @@
-import {ThemeProvider} from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
@@ -82,7 +81,7 @@ const ServicesContainer = ({
       style={{
         alignItems: 'center',
         justifyContent: 'center',
-        width:165,
+        width: 165,
         height: ms(102),
         borderRadius: 5,
         borderWidth: 1,
@@ -160,11 +159,10 @@ const StoreContainer = ({
               </Text>
             </View>
             <View>
-              <Text style={{fontSize: 11, color: '#757575'}}>124 Reviews</Text>
-
+              <Text style={{fontSize: 11, color: '#757575'}}>3.7 KM</Text>
               <Text
-                style={{color: '#17c884', fontSize: 10, letterSpacing: 0.37}}>
-                OPENED NOW
+                style={{color: colors.secondary, fontSize: 10, letterSpacing: 0.37}}>
+                3 OFFERS
               </Text>
             </View>
           </View>
@@ -258,7 +256,7 @@ const SubscribptionSelectCard = ({
   onPress: any;
 }) => {
   return (
-    <TouchableWithoutFeedback onPress={onPress} >
+    <TouchableWithoutFeedback onPress={onPress}>
       <View
         style={{
           width: ms(325),
@@ -272,7 +270,7 @@ const SubscribptionSelectCard = ({
           alignItems: 'center',
           columnGap: 20,
           padding: ms(15),
-          margin: 4
+          margin: 4,
         }}>
         <Text
           style={{
@@ -327,7 +325,7 @@ const EventContainer = ({
           borderColor: '#eeeeee',
           marginBottom: 10,
           flexDirection: 'row',
-          width: s(318),
+          width: s(332),
           height: ms(110),
           borderRadius: 4,
           backgroundColor: 'white',
@@ -445,18 +443,50 @@ const Brand = ({
 }) => {
   return (
     <View style={{rowGap: 10}}>
-<Text style={{color: 'rgb(53,53,53)',
-    fontWeight: '600',
-    fontSize: 12,
-    letterSpacing: 0.31,
-    marginTop: 20}}>Product By </Text>
-    <View style={{ flexDirection: 'row',alignSelf: 'center',width: ms(345), height: ms(64), padding: 10, backgroundColor: 'rgb(242,242,242)' }}>
-      <Image source={src} resizeMode='repeat' style={{ width: ms(44), height: ms(44), borderColor: 'rgb(242,242,242)',marginRight: 10}}/>
-      <View>
-        <Text style={{ fontSize: 17, color: 'rgb(74,144,226)',letterSpacing: 0.47,}}>{brand}</Text>
-        <Text style={{ fontSize: 11, color: 'rgb(47,47,47)',letterSpacing: 0.27, }}>{text}</Text>
+      <Text
+        style={{
+          color: 'rgb(53,53,53)',
+          fontWeight: '600',
+          fontSize: 12,
+          letterSpacing: 0.31,
+          marginTop: 20,
+        }}>
+        Product By{' '}
+      </Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignSelf: 'center',
+          width: ms(345),
+          height: ms(64),
+          padding: 10,
+          backgroundColor: 'rgb(242,242,242)',
+        }}>
+        <Image
+          source={src}
+          resizeMode="repeat"
+          style={{
+            width: ms(44),
+            height: ms(44),
+            borderColor: 'rgb(242,242,242)',
+            marginRight: 10,
+          }}
+        />
+        <View>
+          <Text
+            style={{
+              fontSize: 17,
+              color: 'rgb(74,144,226)',
+              letterSpacing: 0.47,
+            }}>
+            {brand}
+          </Text>
+          <Text
+            style={{fontSize: 11, color: 'rgb(47,47,47)', letterSpacing: 0.27}}>
+            {text}
+          </Text>
+        </View>
       </View>
-    </View> 
     </View>
   );
 };

@@ -1,17 +1,19 @@
 import React from 'react';
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, Image, StyleSheet, View} from 'react-native';
 import {StoreContainer} from '../../../components/container';
 
 const StoreCategory = ({
   onPress,
   horizontal,
   pagingEnabled,
-  style
+  style,
+  favorite,
 }: {
   onPress: any;
   horizontal: boolean;
   pagingEnabled: boolean;
-  style: object
+  style: object;
+  favorite: boolean;
 }) => {
   const data: Array<Object> = [
     {
@@ -60,6 +62,9 @@ const StoreCategory = ({
             onPress //
           }
         />
+        {favorite
+        ? <Image source={require('../../../assets/images/shape2/shape.png')} style={{ position: 'absolute', margin: 10 }} /> 
+        : null }
       </>
     );
   };

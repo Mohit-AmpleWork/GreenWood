@@ -14,7 +14,7 @@ const UserProfile = ({navigation}: {navigation: any}) => {
               style={{tintColor: 'white'}}
               source={require('../../../assets/images/path/path.png')}
             />
-          </TouchableOpacity>
+      </TouchableOpacity>
       </View>
     </ScrollView>
   )

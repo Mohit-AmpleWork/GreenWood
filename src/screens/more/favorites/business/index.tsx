@@ -3,30 +3,30 @@ import {
   View,
   StyleSheet,
   Image,
+  ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
-import {CategoriesComponent} from '../../components/category';
-import { Title } from '../../components/customText';
-import StoreCategory from './storeCategory';
+import {CategoriesComponent} from '../../../../components/category';
+import { Title } from '../../../../components/customText';
+import StoreCategory from '../../../storePage/storeCategory';
 
-const Stores = ({navigation}: {navigation: any}) => {
+
+const FavBusiness = ({navigation}: {navigation: any}) => {
   return (
     <View style={StoreStyle.container}>
       <View style={StoreStyle.subContainerOne}>
         <TouchableOpacity
           style={{width: 28, height: 18}}
           onPress={() => {
-            navigation.navigate('Explorer')
+            navigation.pop();
           }}>
           <Image
             style={{tintColor: '#797979', marginTop: 10, marginLeft: 4}}
-            source={require('../../assets/images/path/path.png')}
+            source={require('../../../../assets/images/path/path.png')}
           />
         </TouchableOpacity>
         <Title text="Stores"  />
-      </View>
-      <View >
-        <CategoriesComponent />
       </View>
       <View style={StoreStyle.subContainerTwo}>
         <StoreCategory
@@ -36,7 +36,7 @@ const Stores = ({navigation}: {navigation: any}) => {
           horizontal={false}
           pagingEnabled={false}
           style={{paddingBottom: 200}}
-          favorite={false}
+          favorite={true}
         />
       </View>
     </View>
@@ -63,4 +63,4 @@ const StoreStyle = StyleSheet.create({
   },
 });
 
-export default Stores;
+export default FavBusiness;

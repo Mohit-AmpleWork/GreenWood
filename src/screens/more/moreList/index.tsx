@@ -10,6 +10,7 @@ import {
 import {ms, vs} from 'react-native-size-matters/extend';
 import colors from '../../../themes/colors';
 import {useNavigation} from '@react-navigation/native';
+import {Labels} from '../../../components/customText';
 
 const MoreList = () => {
   const navigation = useNavigation();
@@ -24,30 +25,31 @@ const MoreList = () => {
   interface data {
     name: string;
     screen: string;
+    number: number;
   }
 
   const DATA = [
     {
       title: 'ACCOUNT',
       data: [
-        {name: 'Update Profile', screen: 'UserProfile'},
-        {name: 'Inbox', screen: 'Inbox'},
+        {name: 'Update Profile', screen: 'UserProfile', number: ''},
+        {name: 'Inbox', screen: 'Inbox', number: '07'},
       ],
     },
     {
       title: 'MY FAVOURITE',
       data: [
-        {name: 'Buisness', screen: 'BusinessDetails'},
-        {name: 'Deals', screen: 'UserProfile'},
-        {name: 'Events', screen: 'UserProfile'},
-        {name: 'Products', screen: 'UserProfile'},
+        {name: 'Buisness', screen: 'FavoriteBusiness', number: '15'},
+        {name: 'Deals', screen: 'FavoriteDeals', number: '07'},
+        {name: 'Events', screen: 'FavoriteEvents', number: '05'},
+        {name: 'Products', screen: 'FavoriteProducts', number: '05'},
       ],
     },
     {
       title: 'ACCOUNT',
       data: [
-        {name: 'Shopping Cart', screen: 'cart'},
-        {name: 'My Orders', screen: 'cart'},
+        {name: 'Shopping Cart', screen: 'cart', number: '07'},
+        {name: 'My Orders', screen: 'orders', number: '06'},
       ],
     },
   ];
@@ -56,12 +58,9 @@ const MoreList = () => {
     <View>
       <SectionList
         sections={DATA}
-        // keyExtractor={(item, index) => (item + index)}
         renderItem={({item}) => (
           <TouchableOpacity
-            onPress={() => {
-              navigation.navigate(item.screen);
-            }}>
+            onPress={() =>  navigation.navigate(item.screen)}>
             <View style={styles.items}>
               <Text style={styles.title}>{item.name}</Text>
               <Image
@@ -69,9 +68,10 @@ const MoreList = () => {
                 resizeMode="cover"
                 width={9}
                 height={16}
-                style={{margin: 15}}
+                style={{ margin: 11}}
               />
             </View>
+            <Text style={styles.number}>{item.number}</Text>
           </TouchableOpacity>
         )}
         renderSectionHeader={({section: {title}}) => (
@@ -104,7 +104,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 13,
     height: 50,
-
     color: colors.black,
     padding: 10,
     paddingLeft: 20,
@@ -112,6 +111,15 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     letterSpacing: 0.36,
   },
+  number: {
+    color: 'gray',
+    fontSize: 15,
+    letterSpacing: 0.36,
+    padding: 10,
+    position: 'absolute',
+    alignSelf: 'flex-end',
+    paddingRight: 33,
+  }
 });
 
 export default MoreList;

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 import { vs, ms } from 'react-native-size-matters/extend'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
 import colors from '../../themes/colors'
 
 const MoreCard = () => {
