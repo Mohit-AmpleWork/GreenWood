@@ -32,7 +32,7 @@ const CardContainer = ({
       <View
         style={{
           flexDirection: 'row',
-          width: s(345),
+          width: '100%',
           height: vs(90),
           margin: 'auto',
           rowGap: 20,
@@ -81,7 +81,7 @@ const ServicesContainer = ({
       style={{
         alignItems: 'center',
         justifyContent: 'center',
-        width: 165,
+        width: ms(155),
         height: ms(102),
         borderRadius: 5,
         borderWidth: 1,
@@ -119,17 +119,15 @@ const StoreContainer = ({
     <Pressable onPress={onPress}>
       <View
         style={{
-          flex: 1,
           borderBottomWidth: 5,
-          borderRightWidth: 3,
           borderLeftWidth: 3,
           borderColor: '#eeeeee',
           marginBottom: 10,
         }}>
         <ImageBackground
           source={src}
-          style={{width: ms(346), height: vs(200)}}
-          resizeMode="cover">
+          style={{minWidth: s(345),maxWidth: '100%', height: vs(200)}}
+          resizeMode='stretch'>
           <View
             style={{
               alignItems: 'flex-end',
@@ -176,15 +174,17 @@ const BusinessReview = () => {
   return (
     <View
       style={{
-        width: s(56),
+        width: 50,
         height: vs(24),
         borderRadius: 2,
         backgroundColor: '#56980a',
         flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-evenly'
       }}>
       <Image
         source={require('../../assets/images/star/path.png')}
-        style={{width: 10, height: 9, marginHorizontal: 10, marginVertical: 8}}
+        style={{width: 10, height: 9, alignSelf: 'center'}}
         resizeMode="stretch"
       />
       <Text
@@ -325,7 +325,7 @@ const EventContainer = ({
           borderColor: '#eeeeee',
           marginBottom: 10,
           flexDirection: 'row',
-          width: s(332),
+          width: '100%',
           height: ms(110),
           borderRadius: 4,
           backgroundColor: 'white',
@@ -380,7 +380,7 @@ const ShopContainer = ({
         }}>
         <ImageBackground
           source={src}
-          style={{width: ms(346), height: vs(218)}}
+          style={{minWidth: s(346), height: vs(218), width: '100%'}}
           resizeMode="stretch">
           <View style={{flex: 1}}>
             <Text
@@ -457,7 +457,8 @@ const Brand = ({
         style={{
           flexDirection: 'row',
           alignSelf: 'center',
-          width: ms(345),
+          maxWidth: '100%',
+          minWidth: ms(345),
           height: ms(64),
           padding: 10,
           backgroundColor: 'rgb(242,242,242)',

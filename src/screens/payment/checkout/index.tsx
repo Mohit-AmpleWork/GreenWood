@@ -83,8 +83,6 @@ const Checkout = ({navigation}: {navigation: any}) => {
 const CartStyle = StyleSheet.create({
   container: {
     backgroundColor: 'rgb(246,246,246)',
-    margin: 'auto',
-    
   },
   subContainer: {
     rowGap: 10,

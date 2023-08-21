@@ -5,6 +5,7 @@ import {s,ms , vs } from 'react-native-size-matters';
 import {BottomBtn} from '../../components/button';
 import {BuisnessImg} from '../../components/image';
 import {Labels} from '../../components/customText';
+import ServiceHeader from '../../components/header/serviceHeader';
 
 const EventDetails = ({navigation}: {navigation: any}) => {
   const pop = () => {
@@ -13,35 +14,11 @@ const EventDetails = ({navigation}: {navigation: any}) => {
 
   return (
     <View style={{flex: 1}}>
-      <ScrollView //contentContainerStyle={styles.Container}
-      >
+      <ScrollView >
         <BuisnessImg
           src={require('../../assets/images/event.jpeg')}
         />
-        <View
-          style={{
-            width: ms(340),
-            marginTop: 20,
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            position: 'absolute',
-          }}>
-          <TouchableOpacity
-            style={{marginStart: 20, width: 28, height: 18}}
-            onPress={pop}>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../assets/images/path/path.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={{width: 28, height: 18}}>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../assets/images/shape/shape.png')}
-            />
-          </TouchableOpacity>
-        </View>
+       <ServiceHeader onPressArrow={pop} />
         <View style={styles.heading}>
           <Labels
             text="LOVE + PROPAGANDA SATURDAY'S (seriesgrp)"

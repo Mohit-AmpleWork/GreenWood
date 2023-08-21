@@ -3,6 +3,7 @@ import {ScrollView, View, Text, StyleSheet,TouchableOpacity,Image} from 'react-n
 import {BuisnessImg} from '../../components/image';
 import {Labels} from '../../components/customText';
 import {BusinessReview} from '../../components/container';
+import ServiceHeader from '../../components/header/serviceHeader';
 
 const DealsDetails = ({navigation}: {navigation: any}) => {
   const pop = () => {
@@ -10,34 +11,11 @@ const DealsDetails = ({navigation}: {navigation: any}) => {
   };
   return (
     <View>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <BuisnessImg
           src={require('../../assets/images/fitness4.webp')}
         />
-        <View
-        style={{
-          width: 340,
-          marginTop: 20,
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          position: 'absolute',
-        }}>
-        <TouchableOpacity
-          style={{marginStart: 20, width: 28, height: 18}}
-          onPress={pop}>
-          <Image
-            style={{tintColor: 'white'}}
-            source={require('../../assets/images/path/path.png')}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity style={{width: 28, height: 18}}>
-          <Image
-            style={{tintColor: 'white'}}
-            source={require('../../assets/images/shape/shape.png')}
-          />
-        </TouchableOpacity>
-      </View>
+          <ServiceHeader onPressArrow={pop} />
         <View style={DealsStyle.subContainerOne}>
           <View>
             <Labels

@@ -18,8 +18,8 @@ import colors from '../../../themes/colors';
 const LandingPage = ({navigation}: {navigation: any}) => {
   return (
     <ScrollView
-      style={{backgroundColor: colors.white}}
-      contentContainerStyle={styles.container}>
+      style={{backgroundColor: colors.white}} >
+        <View style={styles.container}>
       <StatusBar hidden={true} />
       <View>
         <GreenWoodImage />
@@ -48,6 +48,7 @@ const LandingPage = ({navigation}: {navigation: any}) => {
           </TouchableOpacity>
         </Text>
       </View>
+      </View>
     </ScrollView>
   );
 };
@@ -59,7 +60,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.white,
     position: 'relative',
-    padding: 20
+    padding: 20,
+    marginTop: '10%'
   },
   subContainer: {
     flexDirection: 'row',

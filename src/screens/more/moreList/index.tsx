@@ -10,7 +10,6 @@ import {
 import {ms, vs} from 'react-native-size-matters/extend';
 import colors from '../../../themes/colors';
 import {useNavigation} from '@react-navigation/native';
-import {Labels} from '../../../components/customText';
 
 const MoreList = () => {
   const navigation = useNavigation();

@@ -9,11 +9,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {BottomBtn} from '../../components/button';
-import {BuisnessImg, ServiceImg} from '../../components/image';
 import {Labels} from '../../components/customText';
-import { Brand } from '../../components/container';
-import BusinessDetails from '../businessDetailsPage';
-import {s, vs, ms, mvs} from 'react-native-size-matters'
+import {Brand} from '../../components/container';
+import {s, vs, ms, mvs} from 'react-native-size-matters';
+import {ServiceImg} from '../../components/image';
+import LinearGradient from 'react-native-linear-gradient';
+import ServiceHeader from '../../components/header/serviceHeader';
 
 const ProductDetails = ({navigation}: {navigation: any}) => {
   const pop = () => navigation.pop();
@@ -34,14 +35,21 @@ const ProductDetails = ({navigation}: {navigation: any}) => {
   ];
 
   const RenderItem = ({item}: {item: any}) => {
-    return <BuisnessImg src={item.img} />;
+    return (
+      <View>
+        <ServiceImg src={item.img} />
+        <LinearGradient
+          colors={['rgba(0,0,0, 0.7)', 'rgba(0,0,0,-1)']}
+          style={{height: vs(232), width: '100%', position: 'absolute'}}></LinearGradient>
+      </View>
+    );
   };
 
   return (
     <View style={ProductStyle.container}>
-      <ScrollView contentContainerStyle={ProductStyle.subContainer} >
-      <StatusBar hidden={true} />
-      <ScrollView>
+      <ScrollView contentContainerStyle={ProductStyle.subContainer}>
+        <StatusBar hidden={true} />
+        <ScrollView>
         <FlatList
           data={data}
           renderItem={RenderItem}
@@ -50,52 +58,33 @@ const ProductDetails = ({navigation}: {navigation: any}) => {
           showsHorizontalScrollIndicator={false}
           scrollEnabled={true}
         />
-      </ScrollView>
-      <View
-        style={{
-          width: ms(340),
-          marginTop: 20,
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          position: 'absolute',
-        }}>
-        <TouchableOpacity
-          style={{marginStart: 20, width: 28, height: 18}}
-          onPress={pop}>
-          <Image
-            style={{tintColor: 'white'}}
-            source={require('../../assets/images/path/path.png')}
+        </ScrollView>
+       <ServiceHeader onPressArrow={pop} />
+        <View style={{rowGap: 15, padding: 15}}>
+          <Labels
+            text="Roger Solid Wood One Seater Sofa in Provincial Teak Finish by Woodsworth"
+            Color="black"
+            fontsize={17}
+            letterspacing={0.41}
           />
-        </TouchableOpacity>
-        <TouchableOpacity style={{width: 28, height: 18}}>
-          <Image
-            style={{tintColor: 'white'}}
-            source={require('../../assets/images/shape/shape.png')}
+          <Labels
+            text="$199.50"
+            Color="rgb(76 ,133, 10)"
+            fontsize={17}
+            letterspacing={0.41}
           />
-        </TouchableOpacity>
-      </View>
-      <View style={{ rowGap: 15, padding: 15}} >
-        <Labels
-          text="Roger Solid Wood One Seater Sofa in Provincial Teak Finish by Woodsworth"
-          Color="black"
-          fontsize={17}
-          letterspacing={0.41}
+          <Labels
+            text="About Products"
+            Color="black"
+            fontsize={17}
+            letterspacing={0.26}
+          />
+        </View>
+        <Brand
+          src={require('../../assets/images/woodsworth_Logo.jpeg')}
+          brand="Woodsworth"
+          text="231 Products"
         />
-        <Labels
-          text="$199.50"
-          Color="rgb(76 ,133, 10)"
-          fontsize={17}
-          letterspacing={0.41}
-        />
-        <Labels
-          text="About Products"
-          Color="black"
-          fontsize={17}
-          letterspacing={0.26}
-        />
-      </View>
-      <Brand src={require('../../assets/images/woodsworth_Logo.jpeg')} brand='Woodsworth' text="231 Products" />
       </ScrollView>
       <View>
         <BottomBtn
@@ -124,7 +113,6 @@ const ProductStyle = StyleSheet.create({
   subContainer: {
     rowGap: 15,
     alignItems: 'center',
-   
   },
 });
 

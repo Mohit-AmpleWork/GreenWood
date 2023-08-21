@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import {Categories} from '../container';
 import {s, vs, ms} from 'react-native-size-matters';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import colors from '../../themes/colors';
 
 const Data: Array<Object> = [
@@ -47,7 +46,7 @@ const Data: Array<Object> = [
 ];
 
 const CategoriesComponent = () => {
-  const [selected, setSelected] = React.useState(null);
+  const [selected, setSelected] = React.useState(1);
 
   const RenderItem = ({item}: {item: any}) => {
     const isSelected = selected === item.id;

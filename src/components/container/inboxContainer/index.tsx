@@ -28,12 +28,13 @@ const InboxContainer = ({
           backgroundColor: 'rgb(235,235,235',
           borderWidth: 1,
           borderColor: 'rgb(220,220,220)',
+          padding: 12
         }}>
         <View
           style={{
             flexDirection: 'row',
             alignSelf: 'center',
-            width: ms(345),
+            width: '100%',
             height: ms(102),
             alignItems: 'center',
           }}>
@@ -52,6 +53,7 @@ const InboxContainer = ({
               style={{
                 width: s(60),
                 height: vs(60),
+
               }}
             />
           </View>

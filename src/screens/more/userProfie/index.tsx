@@ -1,30 +1,41 @@
-import React from 'react'
-import { Image, ScrollView, View, TouchableOpacity, StyleSheet } from 'react-native'
-import MoreCard from '../../../components/moreCard'
+import React from 'react';
+import {
+  Image,
+  ScrollView,
+  View,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import MoreCard from '../../../components/moreCard';
+import UpdateProfileList from '../../more/moreList/userProfileList';
 
 const UserProfile = ({navigation}: {navigation: any}) => {
   return (
     <ScrollView>
       <MoreCard />
-      <View style={styles.path }>
       <TouchableOpacity
-            style={{marginStart: 20, width: 28, height: 18}}
-            onPress={ () => {navigation.pop()} }>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../../assets/images/path/path.png')}
-            />
+        style={styles.path}
+        onPress={() => {
+          navigation.pop();
+        }}>
+        <Image
+          style={{tintColor: 'white'}}
+          source={require('../../../assets/images/path/path.png')}
+        />
       </TouchableOpacity>
-      </View>
+      <UpdateProfileList />
     </ScrollView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   path: {
     position: 'absolute',
-    marginTop: 25
-  }
-})
+    width: 28,
+    height: 18,
+    marginTop: '10%',
+    marginLeft: 15,
+  },
+});
 
-export default UserProfile
+export default UserProfile;

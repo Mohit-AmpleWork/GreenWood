@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: vs(288),
     backgroundColor: colors.primary,
-    flexDirection: 'row',
     justifyContent: 'center'
   },
   personalphoto: {

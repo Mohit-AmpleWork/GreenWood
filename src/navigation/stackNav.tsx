@@ -23,6 +23,10 @@ import FavBusiness from '../screens/more/favorites/business';
 import FavoriteDeals from '../screens/more/favorites/deals';
 import FavoriteEvents from '../screens/more/favorites/events';
 import Order from '../screens/more/orders';
+import { MMKV } from 'react-native-mmkv';
+import ChatBox from '../screens/more/inbox/chatBox';
+
+export const mmkv = new MMKV();
 
 const Stack = createNativeStackNavigator();
 
@@ -64,6 +68,7 @@ const StackNav = () => {
         <Stack.Screen name="FavoriteDeals" component={FavoriteDeals} />
         <Stack.Screen name="FavoriteEvents" component={FavoriteEvents} />
         <Stack.Screen name="orders" component={Order} />
+        <Stack.Screen name='Chat' component={ChatBox} />
       </Stack.Group>
     </Stack.Navigator>
   );

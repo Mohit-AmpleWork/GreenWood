@@ -5,7 +5,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {s, vs, ms, mvs} from 'react-native-size-matters'
+import {vs, ms, mvs} from 'react-native-size-matters'
 import colors from '../../themes/colors';
 
 const Email = ({text, onPress}: {text: string; onPress: any}) => {
@@ -95,7 +95,7 @@ const Google = () => {
 
 const SignedBtn = ({onPress, text}: {onPress: any; text: string}) => {
   return (
-    <Pressable
+    <TouchableOpacity
       style={{
         width: 140,
         height: 50,
@@ -113,7 +113,7 @@ const SignedBtn = ({onPress, text}: {onPress: any; text: string}) => {
         }}>
         {text}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

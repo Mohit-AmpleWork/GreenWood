@@ -12,11 +12,9 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {GoBack, SignedBtn} from '../../../components/button/index';
 import {GreenWoodImage} from '../../../components/image/index';
 import {FormInput} from '../../../components/textInput/index';
+import {mmkv} from '../../../navigation/stackNav';
 import colors from '../../../themes/colors';
-import {MMKV} from 'react-native-mmkv';
 import REGEX from '../../../utils/regex';
-
-const mmkv = new MMKV();
 
 const SignUp = ({navigation}: {navigation: any}) => {
   const [state, setState] = useState({
@@ -41,36 +39,39 @@ const SignUp = ({navigation}: {navigation: any}) => {
   };
 
   const handleSignUp = () => {
-    if (state.email?.trim().length == 0 || !isValidEmail()) {
-      Alert.alert('Please enter valid email address');
-      return false;
-    } else if (
-      (state?.password && state.password?.trim().length == 0) ||
-      state.password?.trim() == '' ||
-      !isValidPassword()
-    ) {
-      Alert.alert(
-        'Please enter valid Password, Password must Contain Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character, ',
-      );
-      return false;
-    } else if (
-      (state.confirmPassword && state.confirmPassword.trim().length == 0) ||
-      state.confirmPassword.trim() == ''
-    ) {
-      Alert.alert('Please enter valid email address');
-      return false;
-    } else if (
-      state.password &&
-      state.confirmPassword &&
-      state.password != state.confirmPassword
-    ) {
-      Alert.alert('Please enter valid email address');
-      return false;
-    } else {
-      mmkv.set('data', JSON.stringify(data));
-      navigation.navigate('SignInPage');
-      return true;
-    }
+    // if (state.email?.trim().length == 0 || !isValidEmail()) {
+    //   Alert.alert('Please enter valid email address');
+    //   return false;
+    // } else if (
+    //   (state?.password && state.password?.trim().length == 0) ||
+    //   state.password?.trim() == '' ||
+    //   !isValidPassword()
+    // ) {
+    //   Alert.alert(
+    //     'Please enter valid Password, Password must Contain Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character, ',
+    //   );
+    //   return false;
+    // } else if (
+    //   (state.confirmPassword && state.confirmPassword.trim().length == 0) ||
+    //   state.confirmPassword.trim() == ''
+    // ) {
+    //   Alert.alert('Please enter valid email address');
+    //   return false;
+    // } else if (
+    //   state.password &&
+    //   state.confirmPassword &&
+    //   state.password != state.confirmPassword
+    // ) {
+    //   Alert.alert('Please enter valid email address');
+    //   return false;
+    // } else {
+    //   mmkv.set('data', JSON.stringify(data));
+    //   navigation.navigate('SignInPage');
+    //   return true;
+    // }
+    mmkv.set('data', JSON.stringify(data));
+    navigation.navigate('SignInPage');
+
   };
 
   return (

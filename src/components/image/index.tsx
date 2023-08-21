@@ -26,7 +26,7 @@ const BuisnessImg = ({src}: {src: ImageURISource; }) => {
     <View>
       <ImageBackground
         source={src}
-        style={{width: s(375),height: vs(316)}}
+        style={{width: '100%',height: vs(316)}}
         resizeMode="stretch">
         <LinearGradient
           colors={['rgba(0,0,0, 0.7)', 'rgba(0,0,0,-1)']}
@@ -40,7 +40,7 @@ const ServiceImg = ({src}: {src: ImageURISource}) => {
   return (
     <ImageBackground
       source={src}
-      style={{width: ms(375), height: vs(232)}}
+      style={{width: s(375), height: vs(232)}}
       resizeMode="stretch"></ImageBackground>
   );
 };

@@ -4,6 +4,8 @@ import Header from '../../../components/header';
 import InboxContainer from '../../../components/container/inboxContainer';
 
 const Inbox = ({navigation}: {navigation: any}) => {
+  const nav = () => navigation.navigate('Chat');
+
   return (
     <View style={styles.inbox}>
       <Header
@@ -16,13 +18,13 @@ const Inbox = ({navigation}: {navigation: any}) => {
         src={require('../../../assets/images/gym_logo.jpeg')}
         brand="Gold's gym"
         text="Hi, there i would like to…"
-        onPress={() => {}}
+        onPress={nav}
       />
       <InboxContainer
         src={require('../../../assets/images/gym_logo.jpeg')}
         brand="Gold's gym"
         text="Hi, there i would like to…"
-        onPress={() => {}}
+        onPress={nav}
       />
     </View>
   );

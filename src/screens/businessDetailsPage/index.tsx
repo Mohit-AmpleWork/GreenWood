@@ -17,38 +17,16 @@ import {
   BusinessReview,
 } from '../../components/container';
 import colors from '../../themes/colors';
+import ServiceHeader from '../../components/header/serviceHeader';
 
 const BusinessDetails = ({navigation}: {navigation: any}) => {
   const pop = () => navigation.pop();
 
   return (
     <View style={BusinessStyle.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}> 
         <BuisnessImg src={require('../../assets/images/woman-fitness.webp')} />
-        <View
-          style={{
-            width: ms(340),
-            marginTop: 20,
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            position: 'absolute',
-          }}>
-          <TouchableOpacity
-            style={{marginStart: 20, width: 28, height: 18}}
-            onPress={pop}>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../assets/images/path/path.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={{width: 28, height: 18}}>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../assets/images/shape/shape.png')}
-            />
-          </TouchableOpacity>
-        </View>
+        <ServiceHeader onPressArrow={pop} />
         <View style={BusinessStyle.subContainerOne}>
           <View
             style={{flexDirection: 'row', flexWrap: 'wrap', columnGap: 120}}>

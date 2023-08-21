@@ -22,17 +22,11 @@ const Labels = ({text, fontsize, letterspacing, Color}: {text: string, fontsize:
       style={{
         fontSize: fontsize,
         letterSpacing: letterspacing,
-        color: `${Color}`
+        color: `${Color}`,
       }}>
       {text}
     </Text>
   );
 };
-
-const CustomText = {
-  Primary: {
-
-  }
-}
  
 export {Title, Labels };

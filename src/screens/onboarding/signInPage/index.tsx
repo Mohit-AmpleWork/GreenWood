@@ -13,13 +13,11 @@ import {
   Alert,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {MMKV} from 'react-native-mmkv';
 import {GoBack, SignedBtn} from '../../../components/button/index';
 import {GreenWoodImage} from '../../../components/image/index';
 import {FormInput} from '../../../components/textInput/index';
+import {mmkv} from '../../../navigation/stackNav';
 import colors from '../../../themes/colors';
-
-const mmkv = new MMKV();
 
 const SignInPage = ({navigation}: {navigation: any}) => {
   const [email, setEmail] = React.useState('');
@@ -28,17 +26,18 @@ const SignInPage = ({navigation}: {navigation: any}) => {
   const handleSignIn = () => {
     const userData = {
       email: mmkv.getString(email),
-      password: mmkv.getString(password)
-    }
-    if (!userData || userData.email !== email || userData.password !== password) {
+      password: mmkv.getString(password),
+    };
+    if (
+      !userData ||
+      userData.email !== email ||
+      userData.password !== password
+    ) {
       Alert.alert('Error', 'Invalid email or password');
       return;
-    }else{
-      
+    } else {
       Alert.alert('Success', 'Sign in successful!');
     }
-    
-    
   };
 
   return (
@@ -58,19 +57,15 @@ const SignInPage = ({navigation}: {navigation: any}) => {
               <FormInput
                 text="E-MAIL ADDRESS"
                 keyboardType="email-address"
-                inputMode='email'
-                onChangeText={({text}: {text: string}) =>
-                  setEmail(text)
-                }
+                inputMode="email"
+                onChangeText={({text}: {text: string}) => setEmail(text)}
                 value={email}
               />
               <FormInput
                 text="PASSWORD"
                 keyboardType="default"
-                inputMode='text'
-                onChangeText={({text}: {text: string}) =>
-                  setPassword(text)
-                }
+                inputMode="text"
+                onChangeText={({text}: {text: string}) => setPassword(text)}
                 value={password}
               />
               <View
@@ -79,8 +74,12 @@ const SignInPage = ({navigation}: {navigation: any}) => {
                   justifyContent: 'space-between',
                   flexDirection: 'row',
                 }}>
-                <SignedBtn text="Sign In" onPress={() => {navigation.navigate('BottomTab')
-}} />
+                <SignedBtn
+                  text="Sign In"
+                  onPress={() => {
+                    navigation.navigate('BottomTab');
+                  }}
+                />
                 <Text style={{color: 'red', marginTop: 26}}>
                   Forgot Password?
                 </Text>

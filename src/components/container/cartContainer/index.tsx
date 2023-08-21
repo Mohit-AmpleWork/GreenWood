@@ -58,7 +58,7 @@ const CartContainerStyle = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    width: mvs(375),
+    width: '100%',
     height: ms(100),
     padding: 13,
     backgroundColor: colors.white,
@@ -69,13 +69,13 @@ const CartContainerStyle = StyleSheet.create({
   },
   subContainerOne: {flex: 1,alignItems: 'flex-start'},
   subContainerTwo: {
-    // flex: 1,
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     columnGap: 10,
     margin: 25
   },
-  subContainerThree: { alignItems: 'flex-end', marginRight: '8%'},
+  subContainerThree: {alignItems: 'flex-end'},
 });
 
 export default CartContainer;
