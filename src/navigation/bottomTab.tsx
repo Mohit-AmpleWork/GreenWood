@@ -1,14 +1,14 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Explorer from '../screens/explorerPage';
-import Events from '../screens/eventsPage';
-import Deals from '../screens/dealsPage';
-import Shop from '../screens/shopPage';
+import Explorer from '@screens/explorerPage';
+import Events from '@screens/eventsPage';
+import Deals from '@screens/dealsPage';
+import Shop from '@screens/shopPage';
 import {Image} from 'react-native';
-import colors from '../themes/colors';
 import {getFocusedRouteNameFromRoute} from '@react-navigation/core';
-import {mvs, vs} from 'react-native-size-matters';
-import More from '../screens/more';
+import {mvs, vs} from 'react-native-size-matters/extend';
+import More from '@screens/more';
+import colors from '../themes/colors';
 
 const Tab = createBottomTabNavigator();
 

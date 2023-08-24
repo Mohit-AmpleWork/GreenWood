@@ -10,6 +10,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
+    "target": "ES3",
     "baseUrl": "./src",
     "paths": {
       "screens/*": ["screens/*"],
