@@ -3,11 +3,10 @@ import {
   Image,
   ImageBackground,
   ImageURISource,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import {s, vs, mvs} from 'react-native-size-matters';
 
 const GreenWoodImage = () => {
   return (

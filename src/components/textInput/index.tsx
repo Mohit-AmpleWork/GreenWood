@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {Text, View, TextInput, KeyboardTypeOptions, InputModeOptions} from 'react-native';
 import colors from '../../themes/colors';
 
-const FormInput = ({
+interface Props {
+  keyboardType: KeyboardTypeOptions;
+  text: string;
+  value: string;
+  onChangeText: (value: string) => void;
+  inputMode: InputModeOptions;
+} 
+
+const FormInput: FC<Props> = ({
   keyboardType,
   text,
   value,
   onChangeText,
   inputMode,
-}: {
-  keyboardType: KeyboardTypeOptions;
-  text: string;
-  value: string;
-  onChangeText: any;
-  inputMode: InputModeOptions;
 }) => {
   return (
     <View>
@@ -32,7 +34,7 @@ const FormInput = ({
         }}
         keyboardType={keyboardType}
         value={value}
-        onChange={onChangeText} 
+        onChangeText={onChangeText} 
         inputMode={inputMode}
         />
     </View>

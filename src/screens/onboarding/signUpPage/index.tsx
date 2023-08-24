@@ -28,6 +28,8 @@ const SignUp = ({navigation}: {navigation: any}) => {
     password: state.password,
   };
 
+  console.log(state.email);
+
   const isValidEmail = () => {
     const reg = REGEX.emailReg;
     return reg.test(state.email);
@@ -39,39 +41,33 @@ const SignUp = ({navigation}: {navigation: any}) => {
   };
 
   const handleSignUp = () => {
-    // if (state.email?.trim().length == 0 || !isValidEmail()) {
-    //   Alert.alert('Please enter valid email address');
-    //   return false;
-    // } else if (
-    //   (state?.password && state.password?.trim().length == 0) ||
-    //   state.password?.trim() == '' ||
-    //   !isValidPassword()
-    // ) {
-    //   Alert.alert(
-    //     'Please enter valid Password, Password must Contain Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character, ',
-    //   );
-    //   return false;
-    // } else if (
-    //   (state.confirmPassword && state.confirmPassword.trim().length == 0) ||
-    //   state.confirmPassword.trim() == ''
-    // ) {
-    //   Alert.alert('Please enter valid email address');
-    //   return false;
-    // } else if (
-    //   state.password &&
-    //   state.confirmPassword &&
-    //   state.password != state.confirmPassword
-    // ) {
-    //   Alert.alert('Please enter valid email address');
-    //   return false;
-    // } else {
-    //   mmkv.set('data', JSON.stringify(data));
-    //   navigation.navigate('SignInPage');
-    //   return true;
-    // }
-    mmkv.set('data', JSON.stringify(data));
-    navigation.navigate('SignInPage');
-
+    if (state?.email?.trim().length == 0 || !isValidEmail()) {
+      Alert.alert('Please enter valid email address');
+    } else if (
+      (state?.password && state.password?.trim().length == 0) ||
+      state.password?.trim() == '' ||
+      !isValidPassword()
+    ) {
+      Alert.alert(
+        'Please enter valid Password',
+        'Password must Contain Minimum eight and maximum 10 characters, at least one uppercase letter, one lowercase letter, one number and one special character, ',
+      );
+    } else if (
+      (state.confirmPassword && state.confirmPassword.trim().length == 0) ||
+      state.confirmPassword.trim() == ''
+    ) {
+      Alert.alert('Your Password are not Matched', 'Please try again!');
+    } else if (
+      state.password &&
+      state.confirmPassword &&
+      state.password != state.confirmPassword
+    ) {
+      Alert.alert('Your Password not Matched, Please try again!');
+    } else {
+      mmkv.set('data', JSON.stringify(data));
+      navigation.navigate('SignInPage');
+      return true;
+    }
   };
 
   return (
@@ -93,27 +89,28 @@ const SignUp = ({navigation}: {navigation: any}) => {
                 value={state.email}
                 keyboardType="email-address"
                 inputMode="email"
-                onChangeText={({text}: {text: any}) =>
-                  setState(prev => ({...prev, email: text}))
-                }
+                onChangeText={(value: string) => {
+                  console.log('value ======>>>>  ', value);
+                  setState(prev => ({...prev, email: value}));
+                }}
               />
               <FormInput
                 text="PASSWORD"
                 value={state.password}
                 keyboardType="default"
                 inputMode="text"
-                onChangeText={({text}: {text: any}) =>
-                  setState(prev => ({...prev, password: text}))
-                }
+                onChangeText={(value: string) => {
+                  setState(prev => ({...prev, password: value}));
+                }}
               />
               <FormInput
                 text="CONFIRM-PASSWORD"
                 keyboardType="default"
                 inputMode="text"
                 value={state.confirmPassword}
-                onChangeText={({text}: {text: any}) =>
-                  setState(prev => ({...prev, confirmPassword: text}))
-                }
+                onChangeText={(value: string) => {
+                  setState(prev => ({...prev, confirmPassword: value}));
+                }}
               />
               <SignedBtn text="SignUp" onPress={handleSignUp} />
             </View>

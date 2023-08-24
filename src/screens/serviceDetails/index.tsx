@@ -2,22 +2,27 @@ import React from 'react';
 import {
   Text,
   View,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   FlatList,
   ScrollView,
+  ImageURISource,
 } from 'react-native';
-import {Header} from 'react-native/Libraries/NewAppScreen';
 import {BottomBtn} from '../../components/button';
-import {ServiceImg} from '../../components/image';
+import Header from '../../components/header';
+import { ServiceImg } from '../../components/image';
 import colors from '../../themes/colors';
 
 const ServiceDetails = ({navigation}: {navigation: any}) => {
-  const data: Array<Object> = [
+  interface data {
+    id: number,
+    img: ImageURISource
+  }
+
+  const data = [
     {
       id: 1,
-      img: require('../../assets/images/cardio.jpeg'),
+      img: require('../../assets/images/woman-fitness.webp'),
     },
     {
       id: 2,
@@ -30,13 +35,16 @@ const ServiceDetails = ({navigation}: {navigation: any}) => {
   ];
 
   const RenderItem = ({item}: {item: any}) => {
-    return <ServiceImg src={item.img} />;
+   return <ServiceImg src={item.img} />;
+    
   };
 
   return (
       <View style={ServiceStyle.container}>
         <ScrollView>
           <StatusBar hidden={true} />
+
+        <Header title='Muscle Training' onPress={() => {navigation.pop()}} />
           <ScrollView style={{flex: 1}}>
             <FlatList
               data={data}
@@ -48,10 +56,10 @@ const ServiceDetails = ({navigation}: {navigation: any}) => {
             />
           </ScrollView>
           <View>
-            <Text style={ServiceStyle.txt1}>Muscle Training</Text>
+            <Text style={ServiceStyle.heading}>Muscle Training</Text>
             <View style={ServiceStyle.subContainer}>
-              <Text style={ServiceStyle.txt3}>About Service</Text>
-              <Text style={ServiceStyle.txt4}>
+              <Text style={ServiceStyle.subheading}>About Service</Text>
+              <Text style={ServiceStyle.para}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Officiis eveniet maxime tempora rem sunt. Beatae sed, non
                 consequuntur magni id reprehenderit odio dolore quibusdam nihil
@@ -61,7 +69,7 @@ const ServiceDetails = ({navigation}: {navigation: any}) => {
                 rerum,tempore minus voluptatibus!
               </Text>
               <View style={ServiceStyle.subSubContainer}>
-                <Text style={ServiceStyle.txt4}>
+                <Text style={ServiceStyle.para}>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Officiis eveniet maxime tempora rem sunt. Beatae sed, non
                   consequuntur magni id reprehenderit odio dolore quibusdam
@@ -96,26 +104,20 @@ const ServiceStyle = StyleSheet.create({
     margin: 15,
   },
   subSubContainer: {},
-  txt1: {
+  heading: {
     color: colors.black,
     fontSize: 19,
     letterSpacing: 0.37,
     marginTop: 10,
     marginLeft: 10,
   },
-  txt2: {
-    color: '#54940a',
-    fontSize: 19,
-    letterSpacing: 0.37,
-    marginHorizontal: 10,
-  },
-  txt3: {
+  subheading: {
     color: 'black',
     fontWeight: '600',
     fontSize: 12,
     letterSpacing: 0.31,
   },
-  txt4: {
+  para: {
     color: 'black',
     fontWeight: '300',
     fontSize: 11,

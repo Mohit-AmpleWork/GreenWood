@@ -24,18 +24,25 @@ const SignInPage = ({navigation}: {navigation: any}) => {
   const [password, setPassword] = React.useState('');
 
   const handleSignIn = () => {
-    const userData = {
-      email: mmkv.getString(email),
-      password: mmkv.getString(password),
-    };
+    // console.log(mmkv.getString('data'));
+    
+    const jsonUser: any = mmkv.getString('data') 
+    // console.log(jsonUser);
+    
+    const userData = JSON.parse(jsonUser)
+  // console.log('jsonUser ===>', jsonUser, typeof(jsonUser));
+
     if (
       !userData ||
       userData.email !== email ||
       userData.password !== password
     ) {
+      console.log(email);
+      
       Alert.alert('Error', 'Invalid email or password');
       return;
     } else {
+      navigation.navigate('BottomTab')
       Alert.alert('Success', 'Sign in successful!');
     }
   };
@@ -54,20 +61,23 @@ const SignInPage = ({navigation}: {navigation: any}) => {
           <KeyboardAwareScrollView>
             <GreenWoodImage />
             <View style={styles.subContainer}>
-              <FormInput
+            <FormInput
                 text="E-MAIL ADDRESS"
+                value={email}
                 keyboardType="email-address"
                 inputMode="email"
-                onChangeText={({text}: {text: string}) => setEmail(text)}
-                value={email}
+                onChangeText={(value: string) => {
+                  setEmail(value)
+                }}
               />
               <FormInput
                 text="PASSWORD"
+                value={password}
                 keyboardType="default"
                 inputMode="text"
-                onChangeText={({text}: {text: string}) => setPassword(text)}
-                value={password}
-              />
+                onChangeText={(value: string) => {
+                  setPassword(value)
+                }}/>
               <View
                 style={{
                   alignItems: 'center',
@@ -76,9 +86,7 @@ const SignInPage = ({navigation}: {navigation: any}) => {
                 }}>
                 <SignedBtn
                   text="Sign In"
-                  onPress={() => {
-                    navigation.navigate('BottomTab');
-                  }}
+                  onPress={handleSignIn}
                 />
                 <Text style={{color: 'red', marginTop: 26}}>
                   Forgot Password?

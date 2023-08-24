@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, ScrollView, TextInput, Image, StyleSheet} from 'react-native';
+import {View, TextInput, Image, StyleSheet} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import Header from '../../../components/header/index';
 import colors from '../../../themes/colors';

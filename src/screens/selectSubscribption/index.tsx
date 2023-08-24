@@ -20,7 +20,7 @@ const SelectSubscribption = ({
   onPress: any;
   onSwipe: any;
 }) => {
-  const [selected, setSelected] = React.useState(null);
+  const [selected, setSelected] = React.useState(1);
 
   const Data: Array<Object> = [
     {
@@ -48,11 +48,6 @@ const SelectSubscribption = ({
       cost: '$99',
       txt: '2',
     },
-    {
-      id: 6,
-      cost: '$129',
-      txt: '3',
-    },
   ];
 
   const RenderItem = ({item}: {item: any}) => {
@@ -61,7 +56,6 @@ const SelectSubscribption = ({
     };
     const isSelected = selected === item.id;
     const bgColor = isSelected ? 'rgb(25,209,145)' : 'black';
-    const color = isSelected ? 'white' : 'black';
 
     return (
       <SubscribptionSelectCard

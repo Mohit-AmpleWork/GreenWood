@@ -5,15 +5,13 @@ import {
   StyleSheet,
   StatusBar,
   TouchableWithoutFeedback,
-  TouchableOpacity,
-  Image,
 } from 'react-native';
 import {BottomBtn} from '../../components/button';
 import {BuisnessImg} from '../../components/image';
 import SelectSubscribption from '../selectSubscribption';
-import {s, vs, ms, mvs} from 'react-native-size-matters/extend';
 import {Brand} from '../../components/container';
 import {ScrollView} from 'react-native';
+import ServiceHeader from '../../components/header/serviceHeader';
 
 const SubscribtionDetails = ({navigation}: {navigation: any}) => {
   const [isModal, setIsModal] = React.useState(false);
@@ -23,32 +21,7 @@ const SubscribtionDetails = ({navigation}: {navigation: any}) => {
       <ScrollView>
         <StatusBar hidden={true} />
         <BuisnessImg src={require('../../assets/images/woman-fitness.webp')} />
-        <View
-          style={{
-            width: ms(340),
-            marginTop: 20,
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            position: 'absolute',
-          }}>
-          <TouchableOpacity
-            style={{marginStart: 20, width: 28, height: 18}}
-            onPress={() => {
-              navigation.pop();
-            }}>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../assets/images/path/path.png')}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={{width: 28, height: 18}}>
-            <Image
-              style={{tintColor: 'white'}}
-              source={require('../../assets/images/shape/shape.png')}
-            />
-          </TouchableOpacity>
-        </View>
+        <ServiceHeader onPressArrow={()=>{navigation.pop()}} />
         <View style={SubsriptionStyle.subContainer}>
           <Text style={SubsriptionStyle.txt1}>
             New Yearly Membership just in 999
@@ -81,7 +54,7 @@ const SubscribtionDetails = ({navigation}: {navigation: any}) => {
             onSwipe={() => {
               setIsModal(false);
             }}
-            onPress={() => {}}
+            onPress={() => {navigation.navigate('Checkout')}}
           />
         </TouchableWithoutFeedback>
       </ScrollView>

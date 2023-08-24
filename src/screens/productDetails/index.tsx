@@ -5,13 +5,11 @@ import {
   StatusBar,
   StyleSheet,
   FlatList,
-  Image,
-  TouchableOpacity,
 } from 'react-native';
 import {BottomBtn} from '../../components/button';
 import {Labels} from '../../components/customText';
 import {Brand} from '../../components/container';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import {vs} from 'react-native-size-matters';
 import {ServiceImg} from '../../components/image';
 import LinearGradient from 'react-native-linear-gradient';
 import ServiceHeader from '../../components/header/serviceHeader';
