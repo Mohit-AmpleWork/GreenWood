@@ -26,7 +26,6 @@ import FavoriteEvents from '@screens/more/favorites/events';
 import Order from '@screens/more/orders';
 import ChatBox from '@screens/more/inbox/chatBox';
 
-
 export const mmkv = new MMKV();
 
 const Stack = createNativeStackNavigator();

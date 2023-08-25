@@ -7,12 +7,22 @@ import {
   TouchableOpacity,
   Image,
   Switch,
+  Button,
 } from 'react-native';
 import {ms, vs} from 'react-native-size-matters/extend';
 import colors from '../../../themes/colors';
 import {useNavigation} from '@react-navigation/native';
 import Slider from '@react-native-community/slider';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {useDispatch, useSelector} from 'react-redux';
+import type {TypedUseSelectorHook} from 'react-redux';
+
+import {decrement, increment} from 'redux/slice';
+import {AppDispatch, RootState} from 'redux/store';
+
+// Use throughout your app instead of plain `useDispatch` and `useSelector`
+const useAppDispatch: () => AppDispatch = useDispatch;
+const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const UpdateProfileList = () => {
   const [sliderValue, setSliderValue] = React.useState(15);
@@ -20,6 +30,9 @@ const UpdateProfileList = () => {
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   const navigation = useNavigation();
+
+  const count = useAppSelector(state => state.createReducer.value);
+  const dispatch = useAppDispatch();
 
   type menu = object;
 
@@ -87,8 +100,7 @@ const UpdateProfileList = () => {
               ios_backgroundColor="#3e3e3e"
               onValueChange={toggleSwitch}
               value={isEnabled}
-              thumbColor={colors.white}
-              ></Switch>
+              thumbColor={colors.white}></Switch>
           ),
         },
         {
@@ -112,6 +124,29 @@ const UpdateProfileList = () => {
                 onValueChange={sliderValue => setSliderValue(sliderValue)}
                 thumbTintColor={colors.primary}
               />
+            </View>
+          ),
+        },
+        {
+          name: 'Inc/dec',
+          screen: 'UserProfile',
+          content: '',
+          component: (
+            <View
+              style={{
+                position: 'absolute',
+                width: '50%',
+                height: 50,
+                padding: 10,
+                marginLeft: '25%',
+                flexDirection: 'row',
+              }}>
+              <Button title="-" onPress={() => {
+                console.log(decrement)
+                dispatch(decrement)
+              } } />
+              <Text>{count}</Text>
+              <Button title="+" onPress={()=> dispatch(increment) } />
             </View>
           ),
         },
@@ -173,7 +208,7 @@ const styles = StyleSheet.create({
     color: 'gray',
     fontSize: 15,
     letterSpacing: 0.36,
-    padding: 10,
+    padding: 8,
     position: 'absolute',
     alignSelf: 'flex-end',
     paddingRight: 33,
