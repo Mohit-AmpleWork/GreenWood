@@ -1,6 +1,6 @@
+import StoreContainer from 'components/container/storeContainer';
 import React from 'react';
 import {FlatList, Image, StyleSheet, View} from 'react-native';
-import {StoreContainer} from '../../../components/container';
 
 const StoreCategory = ({
   onPress,

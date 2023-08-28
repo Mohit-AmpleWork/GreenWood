@@ -1,6 +1,6 @@
+import ShopContainer from 'components/container/shopContainer';
 import React from 'react'
 import { FlatList, Image, StyleSheet, View } from 'react-native'
-import { ShopContainer } from '../../../components/container';
 
 const ShopCategory = ({onPress, horizontal,pagingEnabled,style, favorite}: {onPress: any, horizontal: boolean,pagingEnabled: boolean; style: object; favorite: boolean}) => {
 

@@ -8,8 +8,8 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import {Categories} from '../container';
-import {s, vs, ms} from 'react-native-size-matters';
+import {Categories} from '../container/customContainers';
+import {s, vs, ms} from 'react-native-size-matters/extend';
 import colors from '../../themes/colors';
 
 const Data: Array<Object> = [

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import {s, ms, vs, mvs} from 'react-native-size-matters';
-import colors from '../../../themes/colors';
+import {s, ms, vs, mvs} from 'react-native-size-matters/extend';
+import colors from '../../themes/colors';
 
 const OrderContainer = ({
   color,
@@ -18,7 +18,7 @@ const OrderContainer = ({
     <View style={OrderContainerStyle.container}>
       <View style={OrderContainerStyle.subContainerTwo}>
         <Image
-          source={require('../../../assets/images/gym_logo.jpeg')}
+          source={require('../../assets/images/gym_logo.jpeg')}
           style={OrderContainerStyle.img}
         />
       </View>

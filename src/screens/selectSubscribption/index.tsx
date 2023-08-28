@@ -6,8 +6,8 @@ import {
   View,
 } from 'react-native';
 import {BottomBtn} from '../../components/button';
-import {SubscribptionSelectCard} from '../../components/container';
-import {s, vs,ms} from 'react-native-size-matters';
+import {SubscribptionSelectCard} from '../../components/container/customContainers';
+import {s, vs,ms} from 'react-native-size-matters/extend';
 import colors from '../../themes/colors';
 import Modal from 'react-native-modal';
 

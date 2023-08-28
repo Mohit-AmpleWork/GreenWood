@@ -6,8 +6,8 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import {s, ms, mvs, vs} from 'react-native-size-matters/extend';
-import colors from '../../../themes/colors';
+import {s, ms, vs} from 'react-native-size-matters/extend';
+import colors from '../../themes/colors';
 
 const InboxContainer = ({
   src,
@@ -53,7 +53,6 @@ const InboxContainer = ({
               style={{
                 width: s(60),
                 height: vs(60),
-
               }}
             />
           </View>

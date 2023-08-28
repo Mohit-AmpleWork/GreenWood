@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView, View, Text, StyleSheet,TouchableOpacity,Image} from 'react-native';
 import {BuisnessImg} from '../../components/image';
 import {Labels} from '../../components/customText';
-import {BusinessReview} from '../../components/container';
+import {BusinessReview} from '../../components/container/customContainers';
 import ServiceHeader from '../../components/header/serviceHeader';
 
 const DealsDetails = ({navigation}: {navigation: any}) => {

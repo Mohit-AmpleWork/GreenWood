@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  ScrollView,
   View,
   TouchableOpacity,
   StyleSheet,
@@ -9,7 +8,6 @@ import {
 import {CategoriesComponent} from '../../components/category';
 import {Title} from '../../components/customText';
 import DealCategories from './dealsCategory';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
 
 const Deals = ({navigation}: {navigation: any}) => {
   const pop = () => {

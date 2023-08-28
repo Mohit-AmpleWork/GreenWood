@@ -25,10 +25,16 @@ import FavoriteDeals from '@screens/more/favorites/deals';
 import FavoriteEvents from '@screens/more/favorites/events';
 import Order from '@screens/more/orders';
 import ChatBox from '@screens/more/inbox/chatBox';
+import { store } from 'redux/store';
 
 export const mmkv = new MMKV();
 
 const Stack = createNativeStackNavigator();
+
+const savedState = mmkv.getBuffer('reduxState');
+if (savedState) {
+  store.dispatch({ type: 'LOAD_STATE', payload: savedState });
+}
 
 const StackNav = () => {
   return (

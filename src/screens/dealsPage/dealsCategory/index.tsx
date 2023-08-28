@@ -1,6 +1,6 @@
+import CardContainer from 'components/container/cardContainer';
 import React from 'react';
 import {FlatList, Image, View} from 'react-native';
-import {CardContainer} from '../../../components/container';
 
 const DealCategories = ({
   horizontal,

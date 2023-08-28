@@ -9,7 +9,7 @@ import {
 import {BottomBtn} from '../../components/button';
 import {BuisnessImg} from '../../components/image';
 import SelectSubscribption from '../selectSubscribption';
-import {Brand} from '../../components/container';
+import {Brand} from '../../components/container/customContainers';
 import {ScrollView} from 'react-native';
 import ServiceHeader from '../../components/header/serviceHeader';
 

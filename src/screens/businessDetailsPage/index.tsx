@@ -1,23 +1,18 @@
 import React from 'react';
 import {
   Alert,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
 } from 'react-native';
 import {BuisnessImg} from '../../components/image';
 import {BottomBtn} from '../../components/button';
-import {s, vs, ms} from 'react-native-size-matters';
-import {
-  CardContainer,
-  ServicesContainer,
-  BusinessReview,
-} from '../../components/container';
 import colors from '../../themes/colors';
 import ServiceHeader from '../../components/header/serviceHeader';
+import CardContainer from 'components/container/cardContainer';
+import ServicesContainer from 'components/container/servicesContainer';
+import { BusinessReview } from '../../components/container/customContainers';
 
 const BusinessDetails = ({navigation}: {navigation: any}) => {
   const pop = () => navigation.pop();

@@ -2,7 +2,7 @@ import React from 'react';
 import {Image, StatusBar, StyleSheet, TextInput, View} from 'react-native';
 import {BottomBtn} from '../../../../components/button';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import {s, vs, ms, mvs} from 'react-native-size-matters/extend';
 import {Labels} from '../../../../components/customText';
 import Modal from 'react-native-modal';
 import { Colors } from 'react-native/Libraries/NewAppScreen';

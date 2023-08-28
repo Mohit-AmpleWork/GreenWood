@@ -3,8 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
   TouchableWithoutFeedback,
   Keyboard,
   Alert,
@@ -15,7 +13,7 @@ import Header from '../../../components/header';
 import CartContainer from '../../../components/container/cartContainer';
 import {CheckoutInput} from '../../../components/textInput/index';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import {ms} from 'react-native-size-matters/extend';
 import PayProcess from './payProcess';
 
 const Checkout = ({navigation}: {navigation: any}) => {

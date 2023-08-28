@@ -1,7 +1,7 @@
 import {NavigationRouteContext} from '@react-navigation/core';
 import React from 'react';
 import {Alert, ScrollView, StyleSheet, View,TouchableOpacity,Image} from 'react-native';
-import {s,ms , vs } from 'react-native-size-matters';
+import {s,ms , vs } from 'react-native-size-matters/extend';
 import {BottomBtn} from '../../components/button';
 import {BuisnessImg} from '../../components/image';
 import {Labels} from '../../components/customText';

@@ -1,6 +1,6 @@
+import EventContainer from 'components/container/eventContainer';
 import React from 'react';
 import {FlatList, Image, ScrollView, View} from 'react-native';
-import {EventContainer} from '../../../components/container';
 
 const EventCategories = ({
   horizontal,

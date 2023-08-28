@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 import {BottomBtn} from '../../components/button';
 import {Labels} from '../../components/customText';
-import {Brand} from '../../components/container';
-import {vs} from 'react-native-size-matters';
+import {Brand} from '../../components/container/customContainers';
+import {vs} from 'react-native-size-matters/extend';
 import {ServiceImg} from '../../components/image';
 import LinearGradient from 'react-native-linear-gradient';
 import ServiceHeader from '../../components/header/serviceHeader';

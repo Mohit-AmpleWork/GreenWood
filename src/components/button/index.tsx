@@ -1,11 +1,6 @@
 import React from 'react';
-import {
-  Pressable,
-  Text,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import {vs, ms, mvs} from 'react-native-size-matters'
+import {Pressable, Text, Image, TouchableOpacity} from 'react-native';
+import {vs, ms, mvs} from 'react-native-size-matters/extend';
 import colors from '../../themes/colors';
 
 const Email = ({text, onPress}: {text: string; onPress: any}) => {
@@ -100,7 +95,7 @@ const SignedBtn = ({onPress, text}: {onPress: any; text: string}) => {
         width: 140,
         height: 50,
         borderRadius: 6,
-        backgroundColor: colors.primary ,
+        backgroundColor: colors.primary,
         marginTop: 30,
       }}
       onPress={onPress}>
@@ -120,7 +115,10 @@ const SignedBtn = ({onPress, text}: {onPress: any; text: string}) => {
 const GoBack = ({onPress}: {onPress: any}) => {
   return (
     <TouchableOpacity style={{paddingTop: vs(73)}} onPress={onPress}>
-      <Text style={{color: '#727272', textAlign: 'center'}}> {'<< '} Go Back </Text>
+      <Text style={{color: '#727272', textAlign: 'center'}}>
+        {' '}
+        {'<< '} Go Back{' '}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -138,88 +136,11 @@ const BottomBtn = ({onPress, text}: {onPress: any; text: string}) => {
         marginTop: 'auto',
       }}
       onPress={onPress}>
-      <Text style={{color: 'white', fontSize: 19, fontWeight: '500'}}>{text}</Text>
+      <Text style={{color: 'white', fontSize: 19, fontWeight: '500'}}>
+        {text}
+      </Text>
     </Pressable>
   );
 };
 
-export {Email, FaceBook, Google, SignedBtn, GoBack,  BottomBtn};
-
-
-// interface props {
-//   primary: boolean;
-//   secondary: boolean;
-//   transparent: boolean;
-//   text: string;
-//   onPress: any;
-// }
-
-// const ButtonComponent = ({
-//   primary,
-//   secondary,
-//   transparent,
-//   text,
-//   onPress
-// }) => {
-//   const buttonStyles = useMemo(
-//     () => [
-//       primary && styles.primary,
-//       secondary && styles.secondary,
-//       transparent && styles.transparent,
-//     ],
-//     [primary, secondary, transparent],
-//   );
-  // const titleStyles = useMemo(
-  //   () => [
-  //     primary && styles.primaryTitle,
-  //     full && styles.fullTitle,
-  //     secondary && styles.secondaryTitle,
-  //     outline && styles.outlineTitle,
-  //     titleStyle,
-  //   ],
-  //   [primary, full, secondary, outline, titleStyle],
-  // );
-  // return (
-  //   <Pressable
-  //     accessibilityLabel={text}
-  //     buttonStyle={buttonStyles}
-      // titleStyle={titleStyles}
-
-//       style={{
-//         width: 300,
-//         height: 50,
-//         borderRadius: 6,
-//         backgroundColor: '#17c884',
-//         marginTop: 20,
-//       }}
-//       onPress={onPress}>
-//       <Text
-//         style={{
-//           color: 'white',
-//           textAlign: 'center',
-//           marginHorizontal: 84,
-//           marginVertical: 15,
-//         }}>
-//         {text}
-//       </Text>
-//     </Pressable>
-//   );
-// };
-
-// const styles = StyleSheet.create({
-//   primary: {
-//     backgroundColor: '#17c884',
-//     height: 60,
-//     borderRadius: 30,
-//   },
-//   secondary: {
-//     backgroundColor: '',
-//     borderWidth: 1,
-//   },
-//   transparent: {
-//     backgroundColor: 'transparent',
-//     borderWidth: 0,
-//   },
-// });
-
-// export default ButtonComponent;
+export {Email, FaceBook, Google, SignedBtn, GoBack, BottomBtn};

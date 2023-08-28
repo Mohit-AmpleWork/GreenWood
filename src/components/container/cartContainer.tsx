@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {s, ms, vs, mvs} from 'react-native-size-matters';
-import colors from '../../../themes/colors';
+import {s, ms, vs, mvs} from 'react-native-size-matters/extend';
+import colors from '../../themes/colors';
 
 const CartContainer = () => {
   return (
