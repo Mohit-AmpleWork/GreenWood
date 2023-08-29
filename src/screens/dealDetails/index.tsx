@@ -1,21 +1,28 @@
 import React from 'react';
-import {ScrollView, View, Text, StyleSheet,TouchableOpacity,Image} from 'react-native';
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import {BuisnessImg} from '../../components/image';
 import {Labels} from '../../components/customText';
-import {BusinessReview} from '../../components/container/customContainers';
 import ServiceHeader from '../../components/header/serviceHeader';
+import {BottomBtn} from 'components/button';
+import DealModal from './dealModal';
 
 const DealsDetails = ({navigation}: {navigation: any}) => {
+  const [isModal, setIsModal] = React.useState(false);
+
   const pop = () => {
     navigation.pop();
   };
   return (
-    <View>
+    <View style={{flex: 1}}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <BuisnessImg
-          src={require('../../assets/images/fitness4.webp')}
-        />
-          <ServiceHeader onPressArrow={pop} />
+        <BuisnessImg src={require('../../assets/images/fitness4.webp')} />
+        <ServiceHeader onPressArrow={pop} />
         <View style={DealsStyle.subContainerOne}>
           <View>
             <Labels
@@ -36,38 +43,65 @@ const DealsDetails = ({navigation}: {navigation: any}) => {
             </Text>
           </View>
           <Labels
-              text="Exp. 15 Jun 2019"
-              Color='rgb(64,64,64)'
-              fontsize={13}
-              letterspacing={0.36} 
+            text="Exp. 15 Jun 2019"
+            Color="rgb(64,64,64)"
+            fontsize={13}
+            letterspacing={0.36}
+          />
+          <View>
+            <Labels
+              text="DEAL"
+              fontsize={17}
+              letterspacing={0.47}
+              Color="rgb(208,2,7)"
             />
-            <View>
-              <Labels text="DEAL" fontsize={17} letterspacing={0.47} Color="rgb(208,2,7)"  />
-              <Labels text="15% OFF on Cardio, Yoga 
-for 6 month Membership" fontsize={24} letterspacing={0.47} Color="rgb(47,47,47)"  />
-            </View>
+            <Labels
+              text="15% OFF on Cardio, Yoga 
+for 6 month Membership"
+              fontsize={24}
+              letterspacing={0.47}
+              Color="rgb(47,47,47)"
+            />
+          </View>
           <Labels
-              text="How To Avail Deal"
-              Color='rgb(79,79,79)'
-              fontsize={13}
-              letterspacing={0.36} 
-            />
+            text="How To Avail Deal"
+            Color="rgb(79,79,79)"
+            fontsize={13}
+            letterspacing={0.36}
+          />
           <View>
             <Labels
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit porta sem, bibendum interdum lectus pretium sit amet. Praesent eleifend et nulla dictum fringilla. Etiam eget interdum, sagittis orci nec, dictum eros. Donec luctus elit sed mi ultricies venenatis quis condimentum turpis."
-              Color='rgb(79,79,79)'
+              Color="rgb(79,79,79)"
               letterspacing={0.28}
               fontsize={10}
             />
             <Labels
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit porta sem, bibendum interdum lectus pretium sit amet. Praesent eleifend et nulla dictum fringilla. Etiam eget interdum, sagittis orci nec, dictum eros. Donec luctus elit sed mi ultricies venenatis quis condimentum turpis."
-              Color='rgb(79,79,79)'
+              Color="rgb(79,79,79)"
               letterspacing={0.28}
               fontsize={10}
             />
           </View>
         </View>
+        <TouchableWithoutFeedback>
+          <DealModal
+            visible={isModal}
+            onSwipe={() => {
+              setIsModal(false);
+            }}
+            onPress={() => {
+              navigation.navigate('Checkout');
+            }}
+          />
+        </TouchableWithoutFeedback>
       </ScrollView>
+      <BottomBtn
+        text="Get New Subscription"
+        onPress={() => {
+          setIsModal(true);
+        }}
+      />
     </View>
   );
 };
