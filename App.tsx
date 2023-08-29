@@ -12,7 +12,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import StackNav from './src/navigation/stackNav';
 import RNBootSplash from 'react-native-bootsplash';
 import {Provider} from 'react-redux';
-import {store} from 'redux/store';
+import store from 'redux/store';
 
 function App(): JSX.Element {
   React.useEffect(() => {

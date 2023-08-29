@@ -1,38 +1,34 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   SectionList,
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   Image,
   Switch,
   Button,
 } from 'react-native';
-import {ms, vs} from 'react-native-size-matters/extend';
+import {vs} from 'react-native-size-matters/extend';
 import colors from '../../../themes/colors';
 import {useNavigation} from '@react-navigation/native';
 import Slider from '@react-native-community/slider';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {useDispatch, useSelector} from 'react-redux';
-import type {TypedUseSelectorHook} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from 'redux/slice/action';
+import { State } from '../../../redux/slice/counterRedux'
 
-import {decrement, increment} from 'redux/slice';
-import {AppDispatch, RootState} from 'redux/store';
-
-// Use throughout your app instead of plain `useDispatch` and `useSelector`
-const useAppDispatch: () => AppDispatch = useDispatch;
-const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const UpdateProfileList = () => {
   const [sliderValue, setSliderValue] = React.useState(15);
   const [isEnabled, setIsEnabled] = React.useState(false);
+
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
-  const navigation = useNavigation();
+  const count = useSelector((state: State) =>  state.count );
+  const dispatch = useDispatch();
 
-  const count = useAppSelector(state => state.createReducer.value);
-  const dispatch = useAppDispatch();
+  const navigation = useNavigation();
 
   type menu = object;
 
@@ -141,12 +137,11 @@ const UpdateProfileList = () => {
                 marginLeft: '25%',
                 flexDirection: 'row',
               }}>
-              <Button title="-" onPress={() => {
-                console.log(decrement)
-                dispatch(decrement)
-              } } />
-              <Text>{count}</Text>
-              <Button title="+" onPress={()=> dispatch(increment) } />
+              <Button title="-" onPress={() => dispatch(decrement())} />
+              <Text style={{color: 'black', paddingRight: 10, paddingLeft: 10}}>
+                {count}
+              </Text>
+              <Button title="+" onPress={() => {dispatch(increment())}} />
             </View>
           ),
         },
@@ -159,13 +154,16 @@ const UpdateProfileList = () => {
       <SectionList
         sections={DATA}
         renderItem={({item}) => (
-          <TouchableOpacity onPress={() => navigation.navigate(item.screen)}>
-            <View style={styles.items}>
-              <Text style={styles.title}>{item.name}</Text>
+          <TouchableWithoutFeedback
+            onPress={() => navigation.navigate(item.screen)}>
+            <View>
+              <View style={styles.items}>
+                <Text style={styles.title}>{item.name}</Text>
+              </View>
+              <Text style={styles.content}>{item.content}</Text>
+              {item.component}
             </View>
-            <Text style={styles.content}>{item.content}</Text>
-            {item.component}
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
         )}
         renderSectionHeader={({section: {title}}) => (
           <Text style={styles.header}>{title}</Text>
