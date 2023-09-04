@@ -1,21 +1,18 @@
 import React from 'react';
 import {
   View,
-  Image,
   Text,
   TouchableOpacity,
   StyleSheet,
-  Alert,
   StatusBar,
   ScrollView,
 } from 'react-native';
 import { GreenWoodImage } from '../../../components/image';
 import {Email, FaceBook, Google} from '../../../components/button/index';
-import SignInPage from '../signInPage';
-import { Link, ThemeProvider } from '@react-navigation/native';
 import colors from '../../../themes/colors';
 
 const LandingPage = ({navigation}: {navigation: any}) => {
+
   return (
     <ScrollView
       style={{backgroundColor: colors.white}} >

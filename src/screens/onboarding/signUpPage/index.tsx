@@ -42,7 +42,7 @@ const SignUp = ({navigation}: {navigation: any}) => {
 
   const handleSignUp = () => {
     if (state?.email?.trim().length == 0 || !isValidEmail()) {
-      Alert.alert('Please enter valid email address');
+      // Alert.alert('Please enter valid email address');
     } else if (
       (state?.password && state.password?.trim().length == 0) ||
       state.password?.trim() == '' ||

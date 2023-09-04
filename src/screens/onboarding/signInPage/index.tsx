@@ -1,49 +1,58 @@
-import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {
   StatusBar,
   Text,
-  KeyboardAvoidingView,
   View,
-  Platform,
   TouchableWithoutFeedback,
   Keyboard,
   StyleSheet,
   ScrollView,
-  Alert,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import Snackbar from 'react-native-snackbar';
+import { setUser } from 'redux/slice/userAuth/action';
 import {GoBack, SignedBtn} from '../../../components/button/index';
 import {GreenWoodImage} from '../../../components/image/index';
 import {FormInput} from '../../../components/textInput/index';
-import {mmkv} from '../../../navigation/stackNav';
 import colors from '../../../themes/colors';
+import { mmkv } from '../../../navigation/stackNav'
+import { useDispatch } from 'react-redux';
 
 const SignInPage = ({navigation}: {navigation: any}) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const handleSignIn = () => {
-    // console.log(mmkv.getString('data'));
-    
-    const jsonUser: any = mmkv.getString('data') 
-    // console.log(jsonUser);
-    
-    const userData = JSON.parse(jsonUser)
-  // console.log('jsonUser ===>', jsonUser, typeof(jsonUser));
+  const dispatch = useDispatch()
 
+  const handleSignIn = () => {
+    const jsonUser: any = mmkv.getString('data') 
+
+    const userData = JSON.parse(jsonUser)
+    
     if (
       !userData ||
       userData.email !== email ||
       userData.password !== password
     ) {
       console.log(email);
-      
-      Alert.alert('Error', 'Invalid email or password');
+      Snackbar.show({
+        text: 'Error, Invalid email or password',
+        duration: Snackbar.LENGTH_LONG,
+        numberOfLines: 2,
+        rtl: true,
+      });
       return;
     } else {
-      navigation.navigate('BottomTab')
-      Alert.alert('Success', 'Sign in successful!');
+      if(userData) {
+        dispatch(setUser(userData))
+        console.log(userData);
+        Snackbar.show({
+          text: 'Success, Sign in successful!',
+          duration: Snackbar.LENGTH_SHORT,
+          numberOfLines: 2,
+          rtl: true,
+        });
+      }
     }
   };
 

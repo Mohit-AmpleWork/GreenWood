@@ -1,3 +1,4 @@
+import { mmkv } from 'navigation/stackNav';
 import React from 'react';
 import {
   StyleSheet,
@@ -7,24 +8,38 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { useDispatch, useSelector } from 'react-redux';
+import {logoutUser} from 'redux/slice/userAuth/action';
+import { UserState } from 'redux/slice/userAuth/userReducer';
 import {Labels} from '../../components/customText';
 import MoreCard from '../../components/moreCard';
 import colors from '../../themes/colors';
 import MoreList from './moreList';
 
 const More = ({navigation}: {navigation: any}) => {
+
+  const user = useSelector((state: UserState) =>  state.user );
+  const dispatch = useDispatch();  
+
+  const logOut = async () => {
+      // mmkv.delete('user')
+      dispatch(logoutUser());
+      console.log(logoutUser());
+      console.log('usert ===>' ,user);
+  }
+
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={MoreStyle.container}>
         <MoreCard />
         <View style={MoreStyle.texts}>
-          <View style={{ alignSelf: 'center' }}>
-          <Labels
-            text="John Cornor"
-            fontsize={25}
-            letterspacing={0.7}
-            Color={colors.white}
-          />
+          <View style={{alignSelf: 'center'}}>
+            <Labels
+              text="John Cornor"
+              fontsize={25}
+              letterspacing={0.7}
+              Color={colors.white}
+            />
           </View>
           <Labels
             text="51 Street, Hampshire, USA"
@@ -36,9 +51,7 @@ const More = ({navigation}: {navigation: any}) => {
         <MoreList />
         <TouchableOpacity
           style={MoreStyle.logout}
-          onPress={() => {
-            navigation.navigate('SignInPage');
-          }}>
+          onPress={logOut}>
           <Image
             source={require('../../assets/images/LogOut/logout.png')}
             width={20}
@@ -66,8 +79,8 @@ const MoreStyle = StyleSheet.create({
     position: 'absolute',
     alignContent: 'center',
     marginTop: '60%',
-    alignSelf: 'center'
-   }
+    alignSelf: 'center',
+  },
 });
 
 export default More;

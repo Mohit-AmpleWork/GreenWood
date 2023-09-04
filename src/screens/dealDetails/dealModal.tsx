@@ -1,3 +1,4 @@
+import RNDateTimePicker from '@react-native-community/datetimepicker';
 import {BottomBtn} from 'components/button';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
@@ -42,6 +43,7 @@ const DealModal = ({
           iconContainer={{flex: 0.1}}
           highlightDateContainerStyle={{ backgroundColor: colors.secondary }}
         />
+        <RNDateTimePicker value={new Date()}  />
         <BottomBtn text="Schedule it" onPress={onPress} />
       </View>
     </Modal>

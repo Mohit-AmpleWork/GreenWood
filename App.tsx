@@ -6,8 +6,7 @@
  */
 
 import React from 'react';
-import {View} from 'react-native';
-
+import {StatusBar, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import StackNav from './src/navigation/stackNav';
 import RNBootSplash from 'react-native-bootsplash';
@@ -23,6 +22,7 @@ function App(): JSX.Element {
   return (
     <Provider store={store}>
       <View style={{flex: 1}}>
+        <StatusBar hidden={true} />
         <NavigationContainer>
           <StackNav />
         </NavigationContainer>

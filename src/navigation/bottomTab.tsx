@@ -5,8 +5,7 @@ import Events from '@screens/eventsPage';
 import Deals from '@screens/dealsPage';
 import Shop from '@screens/shopPage';
 import {Image} from 'react-native';
-import {getFocusedRouteNameFromRoute} from '@react-navigation/core';
-import {mvs, vs} from 'react-native-size-matters/extend';
+import {mvs} from 'react-native-size-matters/extend';
 import More from '@screens/more';
 import colors from '../themes/colors';
 
